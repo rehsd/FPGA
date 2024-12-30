@@ -1,0 +1,19 @@
+
+mainmenu "PetaLinux System Configuration"
+config SUBSYSTEM_TYPE_LINUX
+        bool
+        default y
+        select SYSTEM_ZYNQ
+
+config SYSTEM_ZYNQ
+        bool "ZYNQ Configuration"
+        help
+          ZYNQ Configuration for petalinux project.
+          All these config options will be in /home/rich/petalinux20242/rehsdZynq/project-spec/configs/config
+
+config SUBSYSTEM_DISTRO_PETALINUX
+        bool
+        default y
+        help
+
+source /home/rich/petalinux20242/rehsdZynq/project-spec/configs/configs/Kconfig.main

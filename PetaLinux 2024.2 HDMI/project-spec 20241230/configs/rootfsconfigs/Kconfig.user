@@ -1,0 +1,26 @@
+menu "user packages " 
+config clk-dglnt-dynclk  
+	 bool "clk-dglnt-dynclk"
+	 help
+	
+config digilent-hdmi  
+	 bool "digilent-hdmi"
+	 help
+	
+config fbtest  
+	 bool "fbtest"
+	 help
+	
+config flash-led  
+	 bool "flash-led"
+	 help
+	
+config gpio-demo  
+	 bool "gpio-demo"
+	 help
+	
+config peekpoke  
+	 bool "peekpoke"
+	 help
+	
+endmenu
