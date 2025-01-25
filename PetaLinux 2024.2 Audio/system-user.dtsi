@@ -1,0 +1,197 @@
+/include/ "system-conf.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+/ {
+	model = "rehsd Zynq-7000 Board";
+	compatible = "rehsd,zynq-7000", "xlnx,zynq-7000";
+	chosen {
+		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio video=HDMI-A-1:1280x720M-24@60";
+	};
+	
+	usb_phy0: usb_phy@0 {
+		compatible = "ulpi-phy";
+		#phy-cells = <0>;
+		reg = <0xe0002000 0x1000>;
+		view-port = <0x0170>;
+		reset-gpios = <&gpio0 46 1>;
+		drv-vbus;
+	};
+};
+
+&gem0 {
+        phy-handle = <&ethernet_phy>;
+        ethernet_phy: ethernet-phy@0 {
+                device_type = "ethernet-phy";
+                reg = <0>;
+                /* dt-bindings/phy/realtek.h */
+                /* #define REALTEK_LED_LINK10              BIT(0)
+                   #define REALTEK_LED_LINK100             BIT(1)
+                   #define REALTEK_LED_LINK1000            BIT(3)
+                   #define REALTEK_LED_ACT                 BIT(4)
+                   #define REALTEK_LED_DEFAULT             BIT(7)
+                */
+                /* LED0=10+A, LED1=100+A, LED2=1000+A */
+                realtek,leds-config = <0x11 0x12 0x18>;
+        };
+};
+&usb0 {
+   	status = "okay";
+   	dr_mode = "host";
+   	usb-phy = <&usb_phy0>;
+
+	
+	/* HID (Human Interface Device) for mouse */
+	/* mouse@1 {
+	    compatible = "usb-mouse";
+	    status = "okay";
+	};
+	*/
+
+	usb2vga {
+		compatible = "sis,sisfb";	/* sisusb (x), sisfb (x), sisusbvga, sis ? */
+		vendor_id = <0x0711>;
+		product_id = <0x0900>;
+		status = "okay"; 
+		framebuffer {
+			label = "fb1"; 
+			compatible = "linux,fb"; 
+			linux,fb_base = <0x0>; 
+		};
+	};
+};
+&i2c0 {
+    	clock-frequency = <100000>;
+    	status = "okay";
+};
+&i2c1 {
+	status = "okay";
+	ds3231: rtc@68 {
+		compatible = "maxim,ds3231";
+		reg = <0x68>;
+	};
+};
+
+&amba_pl {
+	digilent_hdmi {
+		compatible = "digilent,hdmi";
+		clocks = <&axi_dynclk_0>;
+		clock-names = "clk";
+		digilent,edid-i2c = <&i2c0>;
+		digilent,fmax = <150000>;
+		digilent,hmax = <1920>;
+		digilent,vmax = <1080>;
+		digilent,hpref = <1280>;
+		digilent,vpref = <720>;
+		port@0 { 
+			hdmi_ep: endpoint { 
+				remote-endpoint = <&pl_disp_ep>; 
+			}; 
+		}; 
+	};
+	xlnx_pl_disp {
+		compatible = "xlnx,pl-disp";
+		device-id = <0xaa01>;
+		dmas = <&axi_vdma_0 0>; 	
+		dma-names = "dma0"; 
+		xlnx,vformat = "RG24"; 	/* "RG24" -- XB24.no BG24.no AR24.no XR24.no RG24.yes */
+		xlnx,bridge = <&v_tc_0>; 
+		port@0 { 
+			pl_disp_ep: endpoint { 
+				remote-endpoint = <&hdmi_ep>; 
+			}; 
+		};
+	};
+	axi_iic_0: i2c@41600000 {
+		interrupts = < 0 36 4 >;
+		xlnx,iic-freq-khz = <100>;
+		compatible = "xlnx,axi-iic-2.1" , "xlnx,xps-iic-2.00.a";
+		xlnx,scl-inertial-delay = <0>;
+		interrupt-parent = <&intc>;
+		xlnx,rable = <0>;
+		xlnx,ip-name = "axi_iic";
+		xlnx,disable-setup-violation-check = <0>;
+		reg = <0x41600000 0x10000>;
+		clocks = <&misc_clk_1>;
+		xlnx,gpo-width = <1>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,static-timing-reg-width = <0>;
+		xlnx,sda-level = <1>;
+		status = "okay";
+		clock-names = "s_axi_aclk";
+		xlnx,ten-bit-adr = <0>;
+		xlnx,default-value = <0x0>;
+		interrupt-names = "iic2intc_irpt";
+		xlnx,iic-board-interface = "Custom";
+		xlnx,timing-reg-width = <32>;
+		xlnx,iic-freq = <100000>;
+		xlnx,smbus-pmbus-host = <0>;
+		xlnx,name = "axi_iic_0";
+		xlnx,axi-aclk-freq-mhz = <48>;
+		xlnx,sda-inertial-delay = <0>;
+		wm8960: wm8960@1a {
+			#sound-dai-cells = <0>;   // only single DAI
+			compatible = "wlf,wm8960";
+			clock-names ="mclk";
+			clocks =<&misc_clk_0>;
+			reg = <0x1a>;		//wm8960 datasheet lists 0x34. the reg value is shifted left by one. 0x1A << 1 = 0x34
+		};
+	};	
+	i2s_receiver_0: i2s_receiver@43c20000 {
+		audio-codec = <&wm8960>;
+	};
+	i2s_transmitter_0: i2s_transmitter@43c30000 {
+		audio-codec = <&wm8960>;
+	};
+};
+&spi0 {
+	is-decoded-cs = <0>;
+	num-cs = <3>;
+	bus-num = <0>;
+	status = "okay";
+	spidev@0x00 {
+		//compatible = "spidev";
+		//see https://www.hackster.io/whitney-knitter/spidev-tutorial-for-zynq-7000-fpga-devices-b5e399
+		//see https://stackoverflow.com/questions/53634892/linux-spidev-why-it-shouldnt-be-directly-in-devicetree
+		compatible = "rohm,dh2228fv";
+		spi-max-frequency = <1000000>;    //max of 25 Mhz
+		reg = <0>;
+		
+		//SPI mode
+		spi-cpol = <0>;
+		spi-cpha = <0>;
+	};
+	spidev@0x01 {
+		compatible = "spidev";
+		spi-max-frequency = <1000000>;
+		reg = <1>;
+	};
+	spidev@0x02 {
+		compatible = "spidev";
+		spi-max-frequency = <1000000>;
+		reg = <2>;
+	};
+};
+&axi_vdma_0 {
+	device-id = <0xaa02>;
+	reg = < 0x43000000 0x10000 >;
+	dma-ranges = <0x00000000 0x00000000 0x40000000>;
+	xlnx,num-fstores = <0x4>;
+	/*
+	vdma-channel@43000000 {
+		xlnx,datawidth = <0x40>;
+		xlnx,device-id = <0x0>;
+	} ;
+	*/
+};
+&axi_dynclk_0 {
+	compatible = "dglnt,axi-dynclk";
+	#clock-cells = <0>;
+	clocks = <&clkc 15>;
+};
+&v_tc_0 {
+	compatible = "xlnx,bridge-v-tc-6.1";	/* 6.2 is the from the block design, but doesn't work here */
+	xlnx,pixels-per-clock = <1>; 
+};
+&axi_gpio_hdmi {
+	compatible = "generic-uio";	
+};
+
