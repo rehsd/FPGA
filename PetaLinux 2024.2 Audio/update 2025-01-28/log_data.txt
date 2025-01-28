@@ -1,0 +1,26 @@
+[   10.326166] xlnx_snd_card xlnx_snd_card.0.auto: xilinx-i2s_capture registered [I2S Audio]
+[  190.251017]  xilinx-i2s_playback: fmt set to SND_SOC_DAIFMT_CBS_CFS | SND_SOC_DAIFMT_I2S
+[  190.251040]  xilinx-i2s_playback: Going to set PLL1 to 49152000
+[  190.517737]  xilinx-i2s_playback: PLL1 set to 49152000
+[  190.517762]  xilinx-i2s_playback: Going to set SYSCLK to 49152000 using AUTO
+[  190.517777]  xilinx-i2s_playback: SYSCLK set to AUTO at 49152000
+[  190.517791]  xilinx-i2s_playback: rehsd_snd_card_hw_params() return success
+[  232.310711]  xilinx-i2s_playback: fmt set to SND_SOC_DAIFMT_CBS_CFS | SND_SOC_DAIFMT_I2S
+[  232.310737]  xilinx-i2s_playback: Going to set PLL1 to 45158400
+[  232.577744]  xilinx-i2s_playback: PLL1 set to 45158400
+[  232.577769]  xilinx-i2s_playback: Going to set SYSCLK to 45158400 using AUTO
+[  232.577784]  xilinx-i2s_playback: SYSCLK set to AUTO at 45158400
+[  232.577798]  xilinx-i2s_playback: rehsd_snd_card_hw_params() return success
+[    0.000000] OF: fdt: Machine model: rehsd Zynq-7000 Board
+[   10.469610] xlnx_snd_card xlnx_snd_card.0.auto: rehsd-snd-0 registered
+[  190.517791]  xilinx-i2s_playback: rehsd_snd_card_hw_params() return success
+[  232.577798]  xilinx-i2s_playback: rehsd_snd_card_hw_params() return success
+[   10.326130] xlnx_snd_card xlnx_snd_card.0.auto: xilinx-i2s_playback registered [I2S Audio]
+[   10.326166] xlnx_snd_card xlnx_snd_card.0.auto: xilinx-i2s_capture registered [I2S Audio]
+[   10.335997] xlnx_snd_card xlnx_snd_card.0.auto: ASoC: sink widget Capture overwritten
+[   10.342584] xlnx_snd_card xlnx_snd_card.0.auto: ASoC: source widget Playback overwritten
+[   10.469610] xlnx_snd_card xlnx_snd_card.0.auto: rehsd-snd-0 registered
+[  190.517791]  xilinx-i2s_playback: rehsd_snd_card_hw_params() return success
+[  232.577798]  xilinx-i2s_playback: rehsd_snd_card_hw_params() return success
+[    1.291229] xlnx_formatter_pcm 83c00000.audio_formatter: sound card device will use DAI link: i2s_transmi>
+[    1.306308] xlnx_formatter_pcm 83c00000.audio_formatter: sound card device will use DAI link: i2s_receiver
