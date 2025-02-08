@@ -1,0 +1,16 @@
+#Note: Mention Each pa/home/rich/petalinux20242/rehsdZynq/components/yocto/layers/meta-xilinx/meta-xilinx-core/recipes-kernel/hdmi/files
+ckage in individual line
+#These packages will get added into rootfs menu entry
+
+CONFIG_gpio-demo
+CONFIG_peekpoke
+CONFIG_clk-dglnt-dynclk
+CONFIG_digilent-hdmi
+CONFIG_flash-led
+CONFIG_fbtest
+CONFIG_doom
+CONFIG_rehsdmisc
+CONFIG_spidev-test
+CONFIG_cs4344
+CONFIG_wm8960-snddrv
+CONFIG_sndserver

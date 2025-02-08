@@ -1,0 +1,50 @@
+menu "user packages " 
+config clk-dglnt-dynclk  
+	 bool "clk-dglnt-dynclk"
+	 help
+	
+config cs4344  
+	 bool "cs4344"
+	 help
+	
+config digilent-hdmi  
+	 bool "digilent-hdmi"
+	 help
+	
+config doom  
+	 bool "doom"
+	 help
+	
+config fbtest  
+	 bool "fbtest"
+	 help
+	
+config flash-led  
+	 bool "flash-led"
+	 help
+	
+config gpio-demo  
+	 bool "gpio-demo"
+	 help
+	
+config peekpoke  
+	 bool "peekpoke"
+	 help
+	
+config rehsdmisc  
+	 bool "rehsdmisc"
+	 help
+	
+config sndserver  
+	 bool "sndserver"
+	 help
+	
+config spidev-test  
+	 bool "spidev-test"
+	 help
+	
+config wm8960-snddrv  
+	 bool "wm8960-snddrv"
+	 help
+	
+endmenu
