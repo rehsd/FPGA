@@ -1,0 +1,78 @@
+menu "user packages " 
+config libsdl2  
+	 bool "libsdl2"
+	 help
+	
+config clk-dglnt-dynclk  
+	 bool "clk-dglnt-dynclk"
+	 help
+	
+config cs4344  
+	 bool "cs4344"
+	 help
+	
+config digilent-hdmi  
+	 bool "digilent-hdmi"
+	 help
+	
+config doom  
+	 bool "doom"
+	 help
+	
+config fbtest  
+	 bool "fbtest"
+	 help
+	
+config flash-led  
+	 bool "flash-led"
+	 help
+	
+config gpm  
+	 bool "gpm"
+	 help
+	
+config imagemagick  
+	 bool "imagemagick"
+	 help
+	
+config nano  
+	 bool "nano"
+	 help
+	
+config rehsdmisc  
+	 bool "rehsdmisc"
+	 help
+	
+config sndserver  
+	 bool "sndserver"
+	 help
+	
+config spidev-test  
+	 bool "spidev-test"
+	 help
+	
+config wayland  
+	 bool "wayland"
+	 help
+	
+config wayland-protocols  
+	 bool "wayland-protocols"
+	 help
+	
+config wayland-utils  
+	 bool "wayland-utils"
+	 help
+	
+config weston  
+	 bool "weston"
+	 help
+	
+config weston-init  
+	 bool "weston-init"
+	 help
+	
+config wm8960-snddrv  
+	 bool "wm8960-snddrv"
+	 help
+	
+endmenu

@@ -1,0 +1,7 @@
+lsactl store
+alsactl info
+alsactl restore
+aplay /usr/bin/rehsd/sample_s24_le.wav
+speaker-test -c 2 -F S24_LE
+ gst-launch-1.0 filesrc location=/usr/bin/rehsd/sample.wav ! wavparse ! audioconvert ! audioresample ! autoaudiosink
+amixer set 'Headphone' 80%
