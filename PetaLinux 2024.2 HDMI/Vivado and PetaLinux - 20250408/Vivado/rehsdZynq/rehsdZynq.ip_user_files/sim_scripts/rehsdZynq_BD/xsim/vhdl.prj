@@ -1,0 +1,33 @@
+vhdl xil_defaultlib  \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_axi_vdma_0_0/sim/rehsdZynq_BD_axi_vdma_0_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_proc_sys_reset_0_0/sim/rehsdZynq_BD_proc_sys_reset_0_0.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/d57c/src/ClockGen.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/d57c/src/SyncAsync.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/d57c/src/SyncAsyncReset.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/d57c/src/DVI_Constants.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/d57c/src/OutputSERDES.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/d57c/src/TMDS_Encoder.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/d57c/src/rgb2dvi.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_rgb2dvi_0_0/sim/rehsdZynq_BD_rgb2dvi_0_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_v_tc_0_0/sim/rehsdZynq_BD_v_tc_0_0.vhd" \
+"../../../bd/rehsdZynq_BD/ipshared/2a7c/src/SyncAsync.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/2a7c/src/axi_dynclk_S00_AXI.vhd" \
+"../../../../rehsdZynq.gen/sources_1/bd/rehsdZynq_BD/ipshared/2a7c/src/axi_dynclk.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_axi_dynclk_0_0/sim/rehsdZynq_BD_axi_dynclk_0_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_axi_gpio_hdmi_0/sim/rehsdZynq_BD_axi_gpio_hdmi_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_smartconnect_0_0/bd_0/ip/ip_1/sim/bd_3bda_psr_aclk_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_smartconnect_1_0/bd_0/ip/ip_1/sim/bd_fb8b_psr_aclk_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_proc_sys_reset_0_2/sim/rehsdZynq_BD_proc_sys_reset_0_2.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_smartconnect_0_1/bd_0/ip/ip_1/sim/bd_fb1b_psr_aclk_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_smartconnect_1_1/bd_0/ip/ip_1/sim/bd_3b4a_psr_aclk_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_axi_iic_0_2/sim/rehsdZynq_BD_axi_iic_0_2.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_VGA_Testing_Top_0_0/sim/rehsdZynq_BD_VGA_Testing_Top_0_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_axi_vdma_0_1/sim/rehsdZynq_BD_axi_vdma_0_1.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_audio_clock_0_0/sim/rehsdZynq_BD_audio_clock_0_0.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_v_tc_0_1/sim/rehsdZynq_BD_v_tc_0_1.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_proc_sys_reset_0_3/sim/rehsdZynq_BD_proc_sys_reset_0_3.vhd" \
+"../../../bd/rehsdZynq_BD/ip/rehsdZynq_BD_axi_dynclk_0_1/sim/rehsdZynq_BD_axi_dynclk_0_1.vhd" \
+"../../../bd/rehsdZynq_BD/sim/rehsdZynq_BD.vhd" \
+
+# Do not sort compile order
+nosort

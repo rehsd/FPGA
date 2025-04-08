@@ -1,0 +1,16 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Sun Apr  6 21:42:53 2025
+| Host         : i14700f-Ubuntu running 64-bit Ubuntu 24.04.2 LTS
+| Command      : report_bus_skew -warn_on_violation -file hdmi_wrapper_bus_skew_routed.rpt -pb hdmi_wrapper_bus_skew_routed.pb -rpx hdmi_wrapper_bus_skew_routed.rpx
+| Design       : hdmi_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -3  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+

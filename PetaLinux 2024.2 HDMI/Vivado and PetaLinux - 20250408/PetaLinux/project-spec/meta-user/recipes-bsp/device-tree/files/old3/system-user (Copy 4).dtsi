@@ -1,0 +1,395 @@
+/include/ "system-conf.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+/ {
+	model = "rehsd Zynq-7000 Board";
+	compatible = "rehsd,zynq-7000", "xlnx,zynq-7000";
+	
+	reserved-memory {
+	    framebuffer_mm2s: framebuffer@20000000 {
+		reg = <0x20000000 0x00E10000>; // MM2S memory region
+	    };
+	    framebuffer_s2mm: framebuffer@21000000 {
+		reg = <0x21000000 0x00E10000>; // S2MM memory region
+	    };
+	};
+
+
+	chosen {
+		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio video=HDMI-A-1:1280x720M-24@60 video=HDMI-A-2:1280x720M-24@60";
+		//bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio video=HDMI-A-1:1280x720M-24@60 video=HDMI-A-2:1280x720M-24@60 video=VGA-1:1024x768M-16@30";
+		//also tested 1920x1080M-24@60, 1280x720M-24@60, 1024x768M-24@60
+	};
+	
+	usb_phy0: usb_phy@0 {
+		compatible = "ulpi-phy";
+		#phy-cells = <0>;
+		reg = <0xe0002000 0x1000>;
+		view-port = <0x0170>;
+		reset-gpios = <&gpio0 46 1>;
+		drv-vbus;
+	};
+};
+
+&gem0 {
+        phy-handle = <&ethernet_phy>;
+        ethernet_phy: ethernet-phy@0 {
+                device_type = "ethernet-phy";
+                reg = <0>;
+                /* dt-bindings/phy/realtek.h */
+                /* #define REALTEK_LED_LINK10              BIT(0)
+                   #define REALTEK_LED_LINK100             BIT(1)
+                   #define REALTEK_LED_LINK1000            BIT(3)
+                   #define REALTEK_LED_ACT                 BIT(4)
+                   #define REALTEK_LED_DEFAULT             BIT(7)
+                */
+                /* LED0=10+A, LED1=100+A, LED2=1000+A */
+                realtek,leds-config = <0x11 0x12 0x18>;
+        };
+};
+&usb0 {
+   	status = "okay";
+   	dr_mode = "host";
+   	usb-phy = <&usb_phy0>;
+
+	
+	/* HID (Human Interface Device) for mouse */
+	/* mouse@1 {
+	    compatible = "usb-mouse";
+	    status = "okay";
+	};
+	*/
+
+	/*
+	usb2vga {
+		compatible = "sis,sisfb";	// sisusb (x), sisfb (x), sisusbvga, sis ?
+		vendor_id = <0x0711>;
+		product_id = <0x0900>;
+		status = "okay"; 
+		framebuffer {
+			label = "fb1"; 
+			compatible = "linux,fb"; 
+			linux,fb_base = <0x0>; 
+		};
+	};
+	*/
+};
+&i2c0 {
+    	clock-frequency = <100000>;
+    	status = "okay";
+};
+&i2c1 {
+	status = "okay";
+	ds3231: rtc@68 {
+		compatible = "maxim,ds3231";
+		reg = <0x68>;
+	};
+};
+&amba_pl {
+	digilent_hdmi {
+		compatible = "digilent,hdmi";
+		clocks = <&axi_dynclk_0>;
+		clock-names = "clk";
+		digilent,edid-i2c = <&i2c0>;
+		digilent,fmax = <150000>;
+		digilent,hmax = <1920>;
+		digilent,vmax = <1080>;
+		digilent,hpref = <1280>;
+		digilent,vpref = <720>;
+		port@0 { 
+			hdmi_ep: endpoint { 
+				remote-endpoint = <&pl_disp_ep>; 
+			}; 
+		}; 
+	};
+	xlnx_pl_disp {
+		compatible = "xlnx,pl-disp";
+		device-id = <0xaa01>;
+		dmas = <&axi_vdma_0 0>; 	
+		dma-names = "dma0"; 
+		//xlnx,vformat = "RG24";
+		xlnx,vformat = "XR24";
+		xlnx,bridge = <&v_tc_0>; 
+		port@0 { 
+			pl_disp_ep: endpoint { 
+				remote-endpoint = <&hdmi_ep>; 
+			}; 
+		};
+	};
+
+	rehsd_hdmi2 {
+		compatible = "rehsd,hdmi";
+		port@0 { 
+			hdmi_ep2: endpoint { 
+				remote-endpoint = <&pl_disp2_ep>; 
+			}; 
+		}; 
+	};
+	xlnx_pl_disp2 {
+		compatible = "xlnx,pl-disp";
+		device-id = <0xaa02>;
+		dmas = <&axi_vdma_1 0>; 	
+		dma-names = "dma0"; 
+		//xlnx,vformat = "RG24";
+		xlnx,vformat = "XR24";
+		port@0 { 
+			pl_disp2_ep: endpoint { 
+				remote-endpoint = <&hdmi_ep2>; 
+			}; 
+		};
+	};
+
+
+	/*
+	digilent_hdmi2 {
+		compatible = "digilent,hdmi2";
+		clocks = <&axi_dynclk_1>;
+		clock-names = "clk";
+		digilent,edid-i2c = <&axi_iic_hdmi2>;
+		digilent,fmax = <150000>;
+		digilent,hmax = <1920>;
+		digilent,vmax = <1080>;
+		digilent,hpref = <1280>;
+		digilent,vpref = <720>;
+		port@0 { 
+			hdmi_ep2: endpoint { 
+				remote-endpoint = <&pl_disp2_ep>; 
+			}; 
+		}; 
+	};
+	xlnx_pl_disp2 {
+		compatible = "xlnx,pl-disp";
+		device-id = <0xaa02>;
+		dmas = <&axi_vdma_1 0>; 	
+		dma-names = "dma0"; 
+		//xlnx,vformat = "RG24";
+		xlnx,vformat = "XR24";
+		xlnx,bridge = <&v_tc_1>; 
+		port@0 { 
+			pl_disp2_ep: endpoint { 
+				remote-endpoint = <&hdmi_ep2>; 
+			}; 
+		};
+	};
+	axi_iic_hdmi2: i2c@41600000 {
+		interrupts = < 0 56 4 >;
+		xlnx,iic-freq-khz = <100>;
+		compatible = "xlnx,axi-iic-2.1" , "xlnx,xps-iic-2.00.a";
+		xlnx,scl-inertial-delay = <0>;
+		interrupt-parent = <&intc>;
+		xlnx,rable = <0>;
+		xlnx,ip-name = "axi_iic";
+		xlnx,disable-setup-violation-check = <0>;
+		reg = <0x41600000 0x10000>;
+		clocks = <&clkc 17>;
+		xlnx,gpo-width = <1>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,static-timing-reg-width = <0>;
+		xlnx,sda-level = <1>;
+		status = "okay";
+		clock-names = "s_axi_aclk";
+		xlnx,ten-bit-adr = <0>;
+		xlnx,default-value = <0x0>;
+		interrupt-names = "iic2intc_irpt";
+		xlnx,iic-board-interface = "Custom";
+		xlnx,timing-reg-width = <32>;
+		xlnx,iic-freq = <100000>;
+		xlnx,smbus-pmbus-host = <0>;
+		xlnx,name = "axi_iic_hdmi2";
+		xlnx,axi-aclk-freq-mhz = <100>;
+		xlnx,sda-inertial-delay = <0>;
+	};
+	*/
+	
+	axi_iic_0: i2c@81600000 {
+		interrupts = < 0 36 4 >;
+		xlnx,iic-freq-khz = <100>;
+		compatible = "xlnx,axi-iic-2.1" , "xlnx,xps-iic-2.00.a";
+		xlnx,scl-inertial-delay = <0>;
+		interrupt-parent = <&intc>;
+		xlnx,rable = <0>;
+		xlnx,ip-name = "axi_iic";
+		xlnx,disable-setup-violation-check = <0>;
+		reg = <0x81600000 0x10000>;
+		clocks = <&misc_clk_1>;
+		xlnx,gpo-width = <1>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,static-timing-reg-width = <0>;
+		xlnx,sda-level = <1>;
+		status = "okay";
+		clock-names = "s_axi_aclk";
+		xlnx,ten-bit-adr = <0>;
+		xlnx,default-value = <0x0>;
+		interrupt-names = "iic2intc_irpt";
+		xlnx,iic-board-interface = "Custom";
+		xlnx,timing-reg-width = <32>;
+		xlnx,iic-freq = <100000>;
+		xlnx,smbus-pmbus-host = <0>;
+		xlnx,name = "axi_iic_0";
+		xlnx,axi-aclk-freq-mhz = <48>;
+		xlnx,sda-inertial-delay = <0>;
+		wm8960: wm8960@1a {
+			#sound-dai-cells = <0>;   // only single DAI
+			compatible = "wlf,wm8960";
+			clock-names ="mclk";
+			clocks =<&misc_clk_0>;
+			assigned-clocks = <&misc_clk_0>;
+			assigned-clock-rates = <24000000>;
+			reg = <0x1a>;		//wm8960 datasheet lists 0x34. the reg value is shifted left by one. 0x1A << 1 = 0x34
+		};
+	};	
+	audio_formatter_0: audio_formatter@83c00000 {
+		audio-codec = <&wm8960>;
+		#sound-dai-cells = <0>;
+		status = "okay";
+	}; 
+	i2s_receiver_0: i2s_receiver@83c10000 {
+		audio-codec = <&wm8960>;
+		#sound-dai-cells = <0>;
+	};
+	i2s_transmitter_0: i2s_transmitter@83c20000 {
+		audio-codec = <&wm8960>;
+		#sound-dai-cells = <0>;
+	};
+};
+&spi0 {
+	is-decoded-cs = <0>;
+	num-cs = <3>;
+	bus-num = <0>;
+	status = "okay";
+	spidev@0x00 {
+		//compatible = "spidev";
+		//see https://www.hackster.io/whitney-knitter/spidev-tutorial-for-zynq-7000-fpga-devices-b5e399
+		//see https://stackoverflow.com/questions/53634892/linux-spidev-why-it-shouldnt-be-directly-in-devicetree
+		compatible = "rohm,dh2228fv";
+		spi-max-frequency = <1000000>;    //max of 25 Mhz
+		reg = <0>;
+		
+		//SPI mode
+		spi-cpol = <0>;
+		spi-cpha = <0>;
+	};
+	spidev@0x01 {
+		compatible = "spidev";
+		spi-max-frequency = <1000000>;
+		reg = <1>;
+	};
+	spidev@0x02 {
+		compatible = "spidev";
+		spi-max-frequency = <1000000>;
+		reg = <2>;
+	};
+};
+
+&axi_vdma_0 {
+	device-id = <0xaa01>;
+	reg = < 0x43000000 0x10000 >;
+	dma-ranges = <0x00000000 0x00000000 0x40000000>;
+	xlnx,num-fstores = <0x4>;
+	status = "okay";
+};
+&axi_dynclk_0 {
+	#clock-cells = <0>;
+	compatible = "dglnt,axi-dynclk";
+	xlnx,krefclkfreqhz = <100000000>;
+	xlnx,kversionminor = <2>;
+	xlnx,rable = <0>;
+	xlnx,ip-name = "axi_dynclk";
+	reg = <0x43c10000 0x10000>;
+	//clocks = <&clkc 15>, <&clkc 15>;
+	xlnx,kversionmajor = <1>;
+	xlnx,edk-iptype = "PERIPHERAL";
+	status = "okay";
+	//clock-names = "REF_CLK_I" , "s_axi_lite_aclk";
+	xlnx,name = "axi_dynclk_0";
+};
+&v_tc_0 {
+	compatible = "xlnx,bridge-v-tc-6.1";	// 6.2 is the from the block design, but doesn't work here
+	xlnx,pixels-per-clock = <1>; 
+	reg = <0x43c40000 0x10000>;
+};
+&axi_gpio_hdmi {
+	compatible = "generic-uio";	
+};
+
+/*
+&axi_vdma_1 {
+	device-id = <0xaa02>;
+    	reg = <0x43010000 0x10000>;
+    	dma-ranges = <0x00000000 0x00000000 0x40000000>;
+    	xlnx,num-fstores = <0x4>;
+    	status = "okay";
+};
+*/
+&axi_vdma_1 {
+    reg = <0x43010000 0x10000>;
+    xlnx,num-fstores = <1>;                  // 4 frame buffers
+    xlnx,m-axi-mm2s-data-width = <32>;       // Data width: 32 bits
+    xlnx,mm2s-genlock-mode = <0x1>;          // MM2S GenLock: Master mode
+    xlnx,use-mm2s-fsync = <1>;               // Enable MM2S FSYNC
+    xlnx,flush-on-fsync = <0>;               // Flush on FSYNC
+    xlnx,s2mm-genlock-mode = <0x2>;          // S2MM GenLock: Slave mode
+    xlnx,vsize = <0x2D0>;                    // Vertical size: 720 lines
+    xlnx,hsize = <0x1400>;                   // Horizontal size: 5120 bytes (1280*4B)
+    xlnx,stride = <0x1400>;                  // Stride: 3840 bytes
+    xlnx,s2mm-linebuffer-depth = <0x1000>;   // Line buffer depth: 5120 bytes (1280*4B)
+    interrupt-names = "mm2s_introut", "s2mm_introut";
+    interrupt-parent = <&intc>;
+    interrupts = <0 53 4>, <0 54 4>;
+    clocks = <&clkc 16>, <&clkc 15>, <&clkc 16>, <&clkc 15>, <&clkc 15>;
+    xlnx,dynamic-resolution = <0>;
+};
+
+
+/*
+&axi_vdma_1 {
+	device-id = <0xaa0>;
+	reg = < 0x43010000 0x10000 >;
+	dma-ranges = <0x00000000 0x00000000 0x40000000>;
+	xlnx,num-fstores = <0x4>;
+};
+&axi_dynclk_1 {
+	#clock-cells = <0>;
+	compatible = "dglnt,axi-dynclk2";
+	xlnx,krefclkfreqhz = <100000000>;
+	xlnx,kversionminor = <2>;
+	xlnx,rable = <0>;
+	xlnx,ip-name = "axi_dynclk";
+	reg = <0x43c00000 0x10000>;
+	//clocks = <&clkc 17>, <&clkc 17>;
+	xlnx,kversionmajor = <1>;
+	xlnx,edk-iptype = "PERIPHERAL";
+	status = "okay";
+	//clock-names = "REF_CLK_I" , "s_axi_lite_aclk";
+	xlnx,name = "axi_dynclk_1";
+};
+&v_tc_1 {
+	compatible = "xlnx,bridge-v-tc-6.1";	// 6.2 is the from the block design, but doesn't work here
+	xlnx,pixels-per-clock = <1>; 
+	reg = <0x43c20000 0x10000>;
+};
+&axi_gpio_hdmi1 {
+	compatible = "generic-uio";	
+};
+*/
+
+
+/*
+&axi_dynclk_0 {
+	compatible = "dglnt,axi-dynclk";
+	reg = <0x43c10000 0x10000>;
+	#clock-cells = <0>;
+	clocks = <&clkc 15>;
+	status = "okay";
+	xlnx,name = "axi_dynclk_0";
+};
+&axi_dynclk_1 {
+	compatible = "dglnt,axi-dynclk2";
+	reg = <0x43c00000 0x10000>;
+	#clock-cells = <0>;
+	clocks = <&clkc 17>;
+	status = "okay";
+	xlnx,name = "axi_dynclk_1";
+};
+*/
+
+

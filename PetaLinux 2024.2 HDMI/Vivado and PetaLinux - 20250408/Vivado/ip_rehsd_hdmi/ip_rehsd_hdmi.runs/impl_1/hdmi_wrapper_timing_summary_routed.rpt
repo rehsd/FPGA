@@ -1,0 +1,618 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Sun Apr  6 21:42:53 2025
+| Host         : i14700f-Ubuntu running 64-bit Ubuntu 24.04.2 LTS
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file hdmi_wrapper_timing_summary_routed.rpt -pb hdmi_wrapper_timing_summary_routed.pb -rpx hdmi_wrapper_timing_summary_routed.rpx -warn_on_violation
+| Design       : hdmi_wrapper
+| Device       : 7z020-clg484
+| Speed File   : -3  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                  Violations  
+---------  ----------------  ---------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell  262         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (262)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (570)
+5. checking no_input_delay (25)
+6. checking no_output_delay (4)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (262)
+--------------------------
+ There are 8 register/latch pins with no clock driven by root clock pin: clk_audio (HIGH)
+
+ There are 250 register/latch pins with no clock driven by root clock pin: clk_pixel (HIGH)
+
+ There are 4 register/latch pins with no clock driven by root clock pin: clk_pixel_x5 (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (570)
+--------------------------------------------------
+ There are 570 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (25)
+-------------------------------
+ There are 25 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (4)
+-------------------------------
+ There are 4 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                  578          inf        0.000                      0                  578           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay           578 Endpoints
+Min Delay           578 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.data_island_data_reg[8]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.777ns  (logic 0.929ns (13.715%)  route 5.848ns (86.285%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           3.571     4.403    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X101Y9         LUT1 (Prop_lut1_I0_O)        0.097     4.500 r  hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_1/O
+                         net (fo=83, routed)          2.277     6.777    hdmi_inst/true_hdmi_output.packet_picker_n_0
+    SLICE_X110Y10        FDRE                                         r  hdmi_inst/true_hdmi_output.data_island_data_reg[8]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.data_island_data_reg[10]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.775ns  (logic 0.929ns (13.719%)  route 5.846ns (86.281%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           3.571     4.403    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X101Y9         LUT1 (Prop_lut1_I0_O)        0.097     4.500 r  hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_1/O
+                         net (fo=83, routed)          2.275     6.775    hdmi_inst/true_hdmi_output.packet_picker_n_0
+    SLICE_X110Y12        FDRE                                         r  hdmi_inst/true_hdmi_output.data_island_data_reg[10]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.data_island_data_reg[11]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.775ns  (logic 0.929ns (13.719%)  route 5.846ns (86.281%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           3.571     4.403    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X101Y9         LUT1 (Prop_lut1_I0_O)        0.097     4.500 r  hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_1/O
+                         net (fo=83, routed)          2.275     6.775    hdmi_inst/true_hdmi_output.packet_picker_n_0
+    SLICE_X110Y12        FDRE                                         r  hdmi_inst/true_hdmi_output.data_island_data_reg[11]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.data_island_data_reg[9]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.775ns  (logic 0.929ns (13.719%)  route 5.846ns (86.281%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           3.571     4.403    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X101Y9         LUT1 (Prop_lut1_I0_O)        0.097     4.500 r  hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_1/O
+                         net (fo=83, routed)          2.275     6.775    hdmi_inst/true_hdmi_output.packet_picker_n_0
+    SLICE_X110Y12        FDRE                                         r  hdmi_inst/true_hdmi_output.data_island_data_reg[9]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.data_island_data_reg[4]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.766ns  (logic 0.929ns (13.738%)  route 5.836ns (86.262%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           3.571     4.403    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X101Y9         LUT1 (Prop_lut1_I0_O)        0.097     4.500 r  hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_1/O
+                         net (fo=83, routed)          2.265     6.766    hdmi_inst/true_hdmi_output.packet_picker_n_0
+    SLICE_X109Y9         FDRE                                         r  hdmi_inst/true_hdmi_output.data_island_data_reg[4]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.packet_picker/packet_type_reg[7]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.632ns  (logic 1.123ns (16.941%)  route 5.508ns (83.059%))
+  Logic Levels:           4  (IBUF=1 LUT5=1 LUT6=2)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           4.063     4.896    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X107Y3         LUT6 (Prop_lut6_I5_O)        0.097     4.993 r  hdmi_inst/true_hdmi_output.packet_picker/packet_type[2]_i_3/O
+                         net (fo=9, routed)           1.033     6.025    hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/packet_type_reg[2]_0
+    SLICE_X101Y3         LUT5 (Prop_lut5_I0_O)        0.097     6.122 f  hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/packet_type[7]_i_3/O
+                         net (fo=1, routed)           0.412     6.535    hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/packet_type[7]_i_3_n_0
+    SLICE_X102Y4         LUT6 (Prop_lut6_I5_O)        0.097     6.632 r  hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/packet_type[7]_i_1/O
+                         net (fo=1, routed)           0.000     6.632    hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet_n_12
+    SLICE_X102Y4         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_picker/packet_type_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.data_island_data_reg[5]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.564ns  (logic 0.929ns (14.160%)  route 5.635ns (85.840%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           3.571     4.403    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X101Y9         LUT1 (Prop_lut1_I0_O)        0.097     4.500 r  hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_1/O
+                         net (fo=83, routed)          2.064     6.564    hdmi_inst/true_hdmi_output.packet_picker_n_0
+    SLICE_X109Y10        FDRE                                         r  hdmi_inst/true_hdmi_output.data_island_data_reg[5]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.data_island_data_reg[7]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.558ns  (logic 0.929ns (14.172%)  route 5.629ns (85.828%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           3.571     4.403    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X101Y9         LUT1 (Prop_lut1_I0_O)        0.097     4.500 r  hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_1/O
+                         net (fo=83, routed)          2.058     6.558    hdmi_inst/true_hdmi_output.packet_picker_n_0
+    SLICE_X111Y9         FDRE                                         r  hdmi_inst/true_hdmi_output.data_island_data_reg[7]/R
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.packet_picker/sample_buffer_used_reg/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.448ns  (logic 1.026ns (15.919%)  route 5.422ns (84.081%))
+  Logic Levels:           3  (IBUF=1 LUT5=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 r  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 r  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           4.063     4.896    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X107Y3         LUT6 (Prop_lut6_I5_O)        0.097     4.993 f  hdmi_inst/true_hdmi_output.packet_picker/packet_type[2]_i_3/O
+                         net (fo=9, routed)           1.033     6.025    hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/packet_type_reg[2]_0
+    SLICE_X101Y3         LUT5 (Prop_lut5_I1_O)        0.097     6.122 r  hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/sample_buffer_used_i_1/O
+                         net (fo=1, routed)           0.326     6.448    hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet_n_0
+    SLICE_X100Y2         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_picker/sample_buffer_used_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 aresetn
+                            (input port)
+  Destination:            hdmi_inst/true_hdmi_output.control_data_reg[4]/R
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.445ns  (logic 0.929ns (14.421%)  route 5.516ns (85.579%))
+  Logic Levels:           2  (IBUF=1 LUT1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y8                                                0.000     0.000 f  aresetn (IN)
+                         net (fo=0)                   0.000     0.000    aresetn
+    Y8                   IBUF (Prop_ibuf_I_O)         0.832     0.832 f  aresetn_IBUF_inst/O
+                         net (fo=9, routed)           3.571     4.403    hdmi_inst/true_hdmi_output.packet_picker/aresetn_IBUF
+    SLICE_X101Y9         LUT1 (Prop_lut1_I0_O)        0.097     4.500 r  hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_1/O
+                         net (fo=83, routed)          1.945     6.445    hdmi_inst/true_hdmi_output.packet_picker_n_0
+    SLICE_X110Y8         FDRE                                         r  hdmi_inst/true_hdmi_output.control_data_reg[4]/R
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][4]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.195ns  (logic 0.128ns (65.700%)  route 0.067ns (34.300%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y5         FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][4]/C
+    SLICE_X109Y5         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][4]/Q
+                         net (fo=2, routed)           0.067     0.195    hdmi_inst/true_hdmi_output.packet_assembler/bch4[28]
+    SLICE_X108Y5         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][6]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.196ns  (logic 0.141ns (71.991%)  route 0.055ns (28.009%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X111Y10        FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][6]/C
+    SLICE_X111Y10        FDRE (Prop_fdre_C_Q)         0.141     0.141 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][6]/Q
+                         net (fo=2, routed)           0.055     0.196    hdmi_inst/true_hdmi_output.packet_assembler/bch[3]_9[62]
+    SLICE_X111Y10        FDRE                                         r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][6]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.203ns  (logic 0.148ns (72.764%)  route 0.055ns (27.236%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X108Y5         FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][7]/C
+    SLICE_X108Y5         FDRE (Prop_fdre_C_Q)         0.148     0.148 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][7]/Q
+                         net (fo=2, routed)           0.055     0.203    hdmi_inst/true_hdmi_output.packet_assembler/bch4[31]
+    SLICE_X109Y5         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][6]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[0][7]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[0][5]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.252ns  (logic 0.128ns (50.730%)  route 0.124ns (49.270%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X110Y9         FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[0][7]/C
+    SLICE_X110Y9         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[0][7]/Q
+                         net (fo=2, routed)           0.124     0.252    hdmi_inst/true_hdmi_output.packet_assembler/bch[0]_6[63]
+    SLICE_X110Y9         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[0][5]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][5]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.258ns  (logic 0.141ns (54.552%)  route 0.117ns (45.448%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y13        FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][5]/C
+    SLICE_X109Y13        FDRE (Prop_fdre_C_Q)         0.141     0.141 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][5]/Q
+                         net (fo=2, routed)           0.117     0.258    hdmi_inst/true_hdmi_output.packet_assembler/bch[3]_9[61]
+    SLICE_X109Y12        FDRE                                         r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[3][3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.282ns  (logic 0.186ns (65.954%)  route 0.096ns (34.046%))
+  Logic Levels:           2  (FDRE=1 LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y5         FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][1]/C
+    SLICE_X109Y5         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][1]/Q
+                         net (fo=2, routed)           0.096     0.237    hdmi_inst/true_hdmi_output.packet_assembler/bch4[25]
+    SLICE_X108Y5         LUT5 (Prop_lut5_I4_O)        0.045     0.282 r  hdmi_inst/true_hdmi_output.packet_assembler/parity[4][0]_i_1/O
+                         net (fo=1, routed)           0.000     0.282    hdmi_inst/true_hdmi_output.packet_assembler/next_ecc3_return[0]
+    SLICE_X108Y5         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_assembler/parity_reg[4][0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_picker/sample_buffer_ready_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.282ns  (logic 0.186ns (65.954%)  route 0.096ns (34.046%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X101Y2         FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/C
+    SLICE_X101Y2         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/Q
+                         net (fo=3, routed)           0.096     0.237    hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg_n_0_[0]
+    SLICE_X100Y2         LUT6 (Prop_lut6_I2_O)        0.045     0.282 r  hdmi_inst/true_hdmi_output.packet_picker/sample_buffer_ready_i_1/O
+                         net (fo=1, routed)           0.000     0.282    hdmi_inst/true_hdmi_output.packet_picker/sample_buffer_ready_i_1_n_0
+    SLICE_X100Y2         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_picker/sample_buffer_ready_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.283ns  (logic 0.164ns (57.878%)  route 0.119ns (42.122%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X100Y3         FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_reg/C
+    SLICE_X100Y3         FDRE (Prop_fdre_C_Q)         0.164     0.164 r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_reg/Q
+                         net (fo=2, routed)           0.119     0.283    hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control
+    SLICE_X101Y2         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_picker/samples_remaining_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.286ns  (logic 0.186ns (65.032%)  route 0.100ns (34.968%))
+  Logic Levels:           2  (FDRE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X101Y2         FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/C
+    SLICE_X101Y2         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/Q
+                         net (fo=3, routed)           0.100     0.241    hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg_n_0_[0]
+    SLICE_X100Y2         LUT3 (Prop_lut3_I0_O)        0.045     0.286 r  hdmi_inst/true_hdmi_output.packet_picker/samples_remaining[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.286    hdmi_inst/true_hdmi_output.packet_picker/samples_remaining[0]_i_1_n_0
+    SLICE_X100Y2         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_picker/samples_remaining_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hdmi_inst/true_hdmi_output.packet_picker/samples_remaining_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.289ns  (logic 0.189ns (65.395%)  route 0.100ns (34.605%))
+  Logic Levels:           2  (FDRE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X101Y2         FDRE                         0.000     0.000 r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/C
+    SLICE_X101Y2         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg[0]/Q
+                         net (fo=3, routed)           0.100     0.241    hdmi_inst/true_hdmi_output.packet_picker/audio_sample_word_transfer_control_synchronizer_chain_reg_n_0_[0]
+    SLICE_X100Y2         LUT4 (Prop_lut4_I2_O)        0.048     0.289 r  hdmi_inst/true_hdmi_output.packet_picker/samples_remaining[1]_i_1/O
+                         net (fo=1, routed)           0.000     0.289    hdmi_inst/true_hdmi_output.packet_picker/samples_remaining[1]_i_1_n_0
+    SLICE_X100Y2         FDRE                                         r  hdmi_inst/true_hdmi_output.packet_picker/samples_remaining_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+

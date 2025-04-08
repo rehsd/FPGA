@@ -1,0 +1,641 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Sun Apr  6 21:42:29 2025
+# Process ID         : 2638366
+# Current directory  : /home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1
+# Command line       : vivado -log hdmi_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hdmi_wrapper.tcl -notrace
+# Log file           : /home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/hdmi_wrapper.vdi
+# Journal file       : /home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/vivado.jou
+# Running On         : i14700f-Ubuntu
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-14700F
+# CPU Frequency      : 2442.105 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 28
+# Host memory        : 33424 MB
+# Swap memory        : 77309 MB
+# Total Virtual      : 110734 MB
+# Available Virtual  : 95205 MB
+#-----------------------------------------------------------
+source hdmi_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'rehsd:user:TMDS2_Interface_rtl:1.0' found within IP repository '/home/rich/VivadoProjects/CustomIP'.
+File in use: /home/rich/VivadoProjects/CustomIP/TMDS2_Interface_rtl.xml
+File ignored: /home/rich/VivadoProjects/CustomIP/old/TMDS2_Interface_rtl.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'rehsd:user:TMDS2_Interface:1.0' found within IP repository '/home/rich/VivadoProjects/CustomIP'.
+File in use: /home/rich/VivadoProjects/CustomIP/TMDS2_Interface.xml
+File ignored: /home/rich/VivadoProjects/CustomIP/old/TMDS2_Interface.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Definition IP file 'rehsd:user:TMDS2_Interface:1.0' found within IP repository '/home/rich/VivadoProjects/CustomIP'.
+File in use: /home/rich/VivadoProjects/CustomIP/TMDS2_Interface.xml
+File ignored: /home/rich/VivadoProjects/CustomIP/old/TMDS2.xml
+WARNING: [IP_Flow 19-1694] Ignoring duplicate Bus Abstraction IP file 'rehsd:user:TMDS2_Interface_rtl:1.0' found within IP repository '/home/rich/VivadoProjects/CustomIP'.
+File in use: /home/rich/VivadoProjects/CustomIP/TMDS2_Interface_rtl.xml
+File ignored: /home/rich/VivadoProjects/CustomIP/old/TMDS2_rtl.xml
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/rich/VivadoProjects/CustomIP'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/rich/xilinx/Vivado/2024.2/data/ip'.
+Command: link_design -top hdmi_wrapper -part xc7z020clg484-3
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7z020clg484-3
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1716.719 ; gain = 0.000 ; free physical = 2422 ; free virtual = 90152
+INFO: [Netlist 29-17] Analyzing 21 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.srcs/constrs_1/new/primary.xdc]
+Finished Parsing XDC File [/home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.srcs/constrs_1/new/primary.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1864.340 ; gain = 0.000 ; free physical = 2328 ; free virtual = 90058
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+10 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:00.46 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2075.504 ; gain = 205.227 ; free physical = 2257 ; free virtual = 89987
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 136249304
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2469.426 ; gain = 393.922 ; free physical = 1862 ; free virtual = 89593
+
+Starting Logic Optimization Task
+
+Phase 1 Initialization
+
+Phase 1.1 Core Generation And Design Setup
+Phase 1.1 Core Generation And Design Setup | Checksum: 136249304
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+
+Phase 1.2 Setup Constraints And Sort Netlist
+Phase 1.2 Setup Constraints And Sort Netlist | Checksum: 136249304
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+Phase 1 Initialization | Checksum: 136249304
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+
+Phase 2 Timer Update And Timing Data Collection
+
+Phase 2.1 Timer Update
+Phase 2.1 Timer Update | Checksum: 136249304
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+
+Phase 2.2 Timing Data Collection
+Phase 2.2 Timing Data Collection | Checksum: 136249304
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+Phase 2 Timer Update And Timing Data Collection | Checksum: 136249304
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+
+Phase 3 Retarget
+INFO: [Opt 31-1851] Number of loadless carry chains removed were: 0
+INFO: [Opt 31-1834] Total Chains To Be Transformed Were: 0 AND Number of Transformed insts Created are: 0
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 3 Retarget | Checksum: 136249304
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+Retarget | Checksum: 136249304
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 4 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 4 Constant propagation | Checksum: 136249304
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+Constant propagation | Checksum: 136249304
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 5 Sweep
+INFO: [Constraints 18-11670] Building netlist checker database with flags, 0x8
+Done building netlist checker database: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+Phase 5 Sweep | Checksum: e569d297
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2805.262 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+Sweep | Checksum: e569d297
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 6 BUFG optimization
+Phase 6 BUFG optimization | Checksum: e569d297
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2837.277 ; gain = 32.016 ; free physical = 1533 ; free virtual = 89263
+BUFG optimization | Checksum: e569d297
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 7 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 7 Shift Register Optimization | Checksum: e569d297
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2837.277 ; gain = 32.016 ; free physical = 1533 ; free virtual = 89263
+Shift Register Optimization | Checksum: e569d297
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 8 Post Processing Netlist
+Phase 8 Post Processing Netlist | Checksum: e569d297
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2837.277 ; gain = 32.016 ; free physical = 1533 ; free virtual = 89263
+Post Processing Netlist | Checksum: e569d297
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+
+Phase 9 Finalization
+
+Phase 9.1 Finalizing Design Cores and Updating Shapes
+Phase 9.1 Finalizing Design Cores and Updating Shapes | Checksum: fe9414b4
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2837.277 ; gain = 32.016 ; free physical = 1533 ; free virtual = 89263
+
+Phase 9.2 Verifying Netlist Connectivity
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2837.277 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+Phase 9.2 Verifying Netlist Connectivity | Checksum: fe9414b4
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2837.277 ; gain = 32.016 ; free physical = 1533 ; free virtual = 89263
+Phase 9 Finalization | Checksum: fe9414b4
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2837.277 ; gain = 32.016 ; free physical = 1533 ; free virtual = 89263
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+Ending Logic Optimization Task | Checksum: fe9414b4
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2837.277 ; gain = 32.016 ; free physical = 1533 ; free virtual = 89263
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: fe9414b4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2837.277 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: fe9414b4
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2837.277 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2837.277 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+Ending Netlist Obfuscation Task | Checksum: fe9414b4
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2837.277 ; gain = 0.000 ; free physical = 1533 ; free virtual = 89263
+INFO: [Common 17-83] Releasing license: Implementation
+30 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+INFO: [Vivado 12-24828] Executing command : report_drc -file hdmi_wrapper_drc_opted.rpt -pb hdmi_wrapper_drc_opted.pb -rpx hdmi_wrapper_drc_opted.rpx
+Command: report_drc -file hdmi_wrapper_drc_opted.rpt -pb hdmi_wrapper_drc_opted.pb -rpx hdmi_wrapper_drc_opted.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/hdmi_wrapper_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2855.332 ; gain = 0.000 ; free physical = 1490 ; free virtual = 89220
+INFO: [Common 17-1381] The checkpoint '/home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/hdmi_wrapper_opt.dcp' has been generated.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-83] Releasing license: Implementation
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Starting Placer Task
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1454 ; free virtual = 89185
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: f0e5e236
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1454 ; free virtual = 89185
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1454 ; free virtual = 89185
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 10dbc1e33
+
+Time (s): cpu = 00:00:00.41 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1442 ; free virtual = 89173
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1e050c855
+
+Time (s): cpu = 00:00:00.5 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1442 ; free virtual = 89173
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1e050c855
+
+Time (s): cpu = 00:00:00.5 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1442 ; free virtual = 89173
+Phase 1 Placer Initialization | Checksum: 1e050c855
+
+Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1442 ; free virtual = 89173
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1e050c855
+
+Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1442 ; free virtual = 89173
+
+Phase 2.2 Update Timing before SLR Path Opt
+Phase 2.2 Update Timing before SLR Path Opt | Checksum: 1e050c855
+
+Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1442 ; free virtual = 89173
+
+Phase 2.3 Post-Processing in Floorplanning
+Phase 2.3 Post-Processing in Floorplanning | Checksum: 1e050c855
+
+Time (s): cpu = 00:00:00.51 ; elapsed = 00:00:00.22 . Memory (MB): peak = 2861.270 ; gain = 0.000 ; free physical = 1442 ; free virtual = 89173
+
+Phase 2.4 Global Place Phase1
+Phase 2.4 Global Place Phase1 | Checksum: 12ec48d1c
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.46 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1452 ; free virtual = 89183
+
+Phase 2.5 Global Place Phase2
+WARNING: [Place 46-29] Timing had been disabled during Placer and, therefore, physical synthesis in Placer will be skipped.
+Phase 2.5 Global Place Phase2 | Checksum: 161310a45
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.5 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89204
+Phase 2 Global Placement | Checksum: 161310a45
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.5 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89204
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 161310a45
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.5 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89204
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1c8d8f366
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.5 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89204
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 14a2b0c61
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.51 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 14a2b0c61
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.51 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+
+Phase 3.5 Small Shape Detail Placement
+Phase 3.5 Small Shape Detail Placement | Checksum: 120d27d1a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.61 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+
+Phase 3.6 Re-assign LUT pins
+Phase 3.6 Re-assign LUT pins | Checksum: 120d27d1a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.62 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+
+Phase 3.7 Pipeline Register Optimization
+Phase 3.7 Pipeline Register Optimization | Checksum: 120d27d1a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.62 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+Phase 3 Detail Placement | Checksum: 120d27d1a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.62 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+Phase 4.1 Post Commit Optimization | Checksum: 120d27d1a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.64 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 120d27d1a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.64 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+
+Phase 4.3 Placer Reporting
+
+Phase 4.3.1 Print Estimated Congestion
+INFO: [Place 30-612] Post-Placement Estimated Congestion 
+ ____________________________________________________
+|           | Global Congestion | Short Congestion  |
+| Direction | Region Size       | Region Size       |
+|___________|___________________|___________________|
+|      North|                1x1|                1x1|
+|___________|___________________|___________________|
+|      South|                1x1|                1x1|
+|___________|___________________|___________________|
+|       East|                1x1|                1x1|
+|___________|___________________|___________________|
+|       West|                1x1|                1x1|
+|___________|___________________|___________________|
+
+Phase 4.3.1 Print Estimated Congestion | Checksum: 120d27d1a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.64 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+Phase 4.3 Placer Reporting | Checksum: 120d27d1a
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.64 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1473 ; free virtual = 89203
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.64 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 169e8a477
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.65 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+Ending Placer Task | Checksum: 14784c9b7
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.65 . Memory (MB): peak = 2893.285 ; gain = 32.016 ; free physical = 1473 ; free virtual = 89203
+47 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+INFO: [Vivado 12-24838] Running report commands "report_control_sets, report_io, report_utilization" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_control_sets -verbose -file hdmi_wrapper_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1455 ; free virtual = 89185
+INFO: [Vivado 12-24828] Executing command : report_utilization -file hdmi_wrapper_utilization_placed.rpt -pb hdmi_wrapper_utilization_placed.pb
+INFO: [Vivado 12-24828] Executing command : report_io -file hdmi_wrapper_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.14 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1450 ; free virtual = 89180
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1450 ; free virtual = 89180
+Wrote PlaceDB: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1449 ; free virtual = 89180
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1449 ; free virtual = 89180
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1449 ; free virtual = 89180
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1449 ; free virtual = 89180
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1447 ; free virtual = 89179
+Write Physdb Complete: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1447 ; free virtual = 89179
+INFO: [Common 17-1381] The checkpoint '/home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/hdmi_wrapper_placed.dcp' has been generated.
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+Starting Initial Update Timing Task
+
+Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1449 ; free virtual = 89180
+INFO: [Vivado_Tcl 4-235] No timing constraint found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+56 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1448 ; free virtual = 89179
+Wrote PlaceDB: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1441 ; free virtual = 89173
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1441 ; free virtual = 89173
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1441 ; free virtual = 89173
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1441 ; free virtual = 89173
+Wrote Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1441 ; free virtual = 89173
+Write Physdb Complete: Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2893.285 ; gain = 0.000 ; free physical = 1441 ; free virtual = 89173
+INFO: [Common 17-1381] The checkpoint '/home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/hdmi_wrapper_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+
+Phase 1 Build RT Design
+Checksum: PlaceDB: d387714c ConstDB: 0 ShapeSum: 5e03e57b RouteDB: 15f972f0
+Post Restoration Checksum: NetGraph: 740cf681 | NumContArr: e2ae9182 | Constraints: c2a8fa9d | Timing: c2a8fa9d
+Phase 1 Build RT Design | Checksum: 2dc0d7d3d
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 2977.211 ; gain = 83.926 ; free physical = 1321 ; free virtual = 89052
+
+Phase 2 Router Initialization
+INFO: [Route 35-64] No timing constraints were detected. The router will operate in resource-optimization mode.
+
+Phase 2.1 Fix Topology Constraints
+Phase 2.1 Fix Topology Constraints | Checksum: 2dc0d7d3d
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 3009.211 ; gain = 115.926 ; free physical = 1290 ; free virtual = 89021
+
+Phase 2.2 Pre Route Cleanup
+Phase 2.2 Pre Route Cleanup | Checksum: 2dc0d7d3d
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 3009.211 ; gain = 115.926 ; free physical = 1290 ; free virtual = 89021
+ Number of Nodes with overlaps = 0
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 655
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 655
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 2 Router Initialization | Checksum: 2ca80182c
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 3 Global Routing
+Phase 3 Global Routing | Checksum: 2ca80182c
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 4 Initial Routing
+
+Phase 4.1 Initial Net Routing Pass
+Phase 4.1 Initial Net Routing Pass | Checksum: 36001b371
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+Phase 4 Initial Routing | Checksum: 36001b371
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 5 Rip-up And Reroute
+
+Phase 5.1 Global Iteration 0
+ Number of Nodes with overlaps = 35
+ Number of Nodes with overlaps = 0
+Phase 5.1 Global Iteration 0 | Checksum: 24e34934f
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+Phase 5 Rip-up And Reroute | Checksum: 24e34934f
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 6 Delay and Skew Optimization
+Phase 6 Delay and Skew Optimization | Checksum: 24e34934f
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 7 Post Hold Fix
+
+Phase 7.1 Hold Fix Iter
+Phase 7.1 Hold Fix Iter | Checksum: 24e34934f
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+Phase 7 Post Hold Fix | Checksum: 24e34934f
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 8 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.0732629 %
+  Global Horizontal Routing Utilization  = 0.230308 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+--GLOBAL Congestion:
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 1x1 Area, Max Cong = 27.9279%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 18.9189%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 35.2941%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 23.5294%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 8 Route finalize | Checksum: 24e34934f
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 9 Verifying routed nets
+
+ Verification completed successfully
+Phase 9 Verifying routed nets | Checksum: 24e34934f
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 10 Depositing Routes
+Phase 10 Depositing Routes | Checksum: 2d3bc2c13
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Phase 11 Post Process Routing
+Phase 11 Post Process Routing | Checksum: 2d3bc2c13
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+Total Elapsed time in route_design: 9.15 secs
+
+Phase 12 Post-Route Event Processing
+Phase 12 Post-Route Event Processing | Checksum: adced830
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+INFO: [Route 35-16] Router Completed Successfully
+Ending Routing Task | Checksum: adced830
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+63 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:09 . Memory (MB): peak = 3041.367 ; gain = 148.082 ; free physical = 1254 ; free virtual = 88986
+INFO: [Vivado 12-24828] Executing command : report_drc -file hdmi_wrapper_drc_routed.rpt -pb hdmi_wrapper_drc_routed.pb -rpx hdmi_wrapper_drc_routed.rpx
+Command: report_drc -file hdmi_wrapper_drc_routed.rpt -pb hdmi_wrapper_drc_routed.pb -rpx hdmi_wrapper_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/hdmi_wrapper_drc_routed.rpt.
+report_drc completed successfully
+INFO: [Vivado 12-24828] Executing command : report_methodology -file hdmi_wrapper_methodology_drc_routed.rpt -pb hdmi_wrapper_methodology_drc_routed.pb -rpx hdmi_wrapper_methodology_drc_routed.rpx
+Command: report_methodology -file hdmi_wrapper_methodology_drc_routed.rpt -pb hdmi_wrapper_methodology_drc_routed.pb -rpx hdmi_wrapper_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 8 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file /home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/hdmi_wrapper_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [Vivado 12-24828] Executing command : report_timing_summary -max_paths 10 -report_unconstrained -file hdmi_wrapper_timing_summary_routed.rpt -pb hdmi_wrapper_timing_summary_routed.pb -rpx hdmi_wrapper_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+INFO: [Vivado 12-24838] Running report commands "report_bus_skew, report_incremental_reuse, report_route_status" in parallel.
+Running report generation with 3 threads.
+INFO: [Vivado 12-24828] Executing command : report_route_status -file hdmi_wrapper_route_status.rpt -pb hdmi_wrapper_route_status.pb
+INFO: [Vivado 12-24828] Executing command : report_incremental_reuse -file hdmi_wrapper_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [Vivado 12-24828] Executing command : report_bus_skew -warn_on_violation -file hdmi_wrapper_bus_skew_routed.rpt -pb hdmi_wrapper_bus_skew_routed.pb -rpx hdmi_wrapper_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Vivado 12-24828] Executing command : report_power -file hdmi_wrapper_power_routed.rpt -pb hdmi_wrapper_power_summary_routed.pb -rpx hdmi_wrapper_power_routed.rpx
+Command: report_power -file hdmi_wrapper_power_routed.rpt -pb hdmi_wrapper_power_summary_routed.pb -rpx hdmi_wrapper_power_routed.rpx
+WARNING: [Power 33-232] No user defined clocks were found in the design! Power estimation will be inaccurate until this is corrected.
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+83 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [Vivado 12-24828] Executing command : report_clock_utilization -file hdmi_wrapper_clock_utilization_routed.rpt
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3225.719 ; gain = 0.000 ; free physical = 1125 ; free virtual = 88857
+Wrote PlaceDB: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 3225.719 ; gain = 0.000 ; free physical = 1124 ; free virtual = 88857
+Wrote PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3225.719 ; gain = 0.000 ; free physical = 1124 ; free virtual = 88857
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Wrote RouteStorage: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 3225.719 ; gain = 0.000 ; free physical = 1124 ; free virtual = 88858
+Wrote Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3225.719 ; gain = 0.000 ; free physical = 1124 ; free virtual = 88858
+Wrote Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3225.719 ; gain = 0.000 ; free physical = 1124 ; free virtual = 88858
+Write Physdb Complete: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3225.719 ; gain = 0.000 ; free physical = 1124 ; free virtual = 88858
+INFO: [Common 17-1381] The checkpoint '/home/rich/VivadoProjects/ip_rehsd_hdmi/ip_rehsd_hdmi.runs/impl_1/hdmi_wrapper_routed.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  6 21:42:54 2025...

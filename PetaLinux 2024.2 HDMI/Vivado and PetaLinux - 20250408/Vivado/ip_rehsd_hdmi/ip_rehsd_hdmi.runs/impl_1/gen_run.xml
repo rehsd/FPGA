@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-3" LaunchTime="1743993708">
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="hdmi_wrapper_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="hdmi_wrapper_routed.rqs"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-BGN" Name="hdmi_wrapper.bgn"/>
+  <File Type="BITSTR-SYSDEF" Name="hdmi_wrapper.sysdef"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="hdmi_wrapper.ltx"/>
+  <File Type="RBD_FILE" Name="hdmi_wrapper.rbd"/>
+  <File Type="NPI_FILE" Name="hdmi_wrapper.npi"/>
+  <File Type="RNPI_FILE" Name="hdmi_wrapper.rnpi"/>
+  <File Type="CFI_FILE" Name="hdmi_wrapper.cfi"/>
+  <File Type="RCFI_FILE" Name="hdmi_wrapper.rcfi"/>
+  <File Type="PL-PDI-FILE" Name="hdmi_wrapper_pld.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="hdmi_wrapper_boot.pdi"/>
+  <File Type="RDI-RDI" Name="hdmi_wrapper.vdi"/>
+  <File Type="PDI-FILE" Name="hdmi_wrapper.pdi"/>
+  <File Type="BITSTR-MMI" Name="hdmi_wrapper.mmi"/>
+  <File Type="BITSTR-BMM" Name="hdmi_wrapper_bd.bmm"/>
+  <File Type="BITSTR-NKY" Name="hdmi_wrapper.nky"/>
+  <File Type="BITSTR-RBT" Name="hdmi_wrapper.rbt"/>
+  <File Type="BITSTR-MSK" Name="hdmi_wrapper.msk"/>
+  <File Type="BG-BIN" Name="hdmi_wrapper.bin"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="BG-BIT" Name="hdmi_wrapper.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="hdmi_wrapper_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="hdmi_wrapper_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="hdmi_wrapper_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="hdmi_wrapper_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="hdmi_wrapper_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="hdmi_wrapper_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="hdmi_wrapper_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="hdmi_wrapper_postroute_physopt.dcp"/>
+  <File Type="BG-DRC" Name="hdmi_wrapper.drc"/>
+  <File Type="ROUTE-RQS-PB" Name="hdmi_wrapper_rqs_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="hdmi_wrapper_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="hdmi_wrapper_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="hdmi_wrapper_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="hdmi_wrapper_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="hdmi_wrapper_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="hdmi_wrapper_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="hdmi_wrapper_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="hdmi_wrapper_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="hdmi_wrapper_route_status.pb"/>
+  <File Type="ROUTE-STATUS" Name="hdmi_wrapper_route_status.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="hdmi_wrapper_power_routed.rpx"/>
+  <File Type="ROUTE-PWR-SUM" Name="hdmi_wrapper_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="hdmi_wrapper_power_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="hdmi_wrapper_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="hdmi_wrapper_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="hdmi_wrapper_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="hdmi_wrapper_drc_routed.rpx"/>
+  <File Type="ROUTE-DRC-PB" Name="hdmi_wrapper_drc_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="hdmi_wrapper_drc_routed.rpt"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="hdmi_wrapper_routed_bb.dcp"/>
+  <File Type="ROUTE-DCP" Name="hdmi_wrapper_routed.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="hdmi_wrapper_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="hdmi_wrapper_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="hdmi_wrapper_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="hdmi_wrapper_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="hdmi_wrapper_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="hdmi_wrapper_postplace_pwropt.dcp"/>
+  <File Type="PLACE-RQA-PB" Name="hdmi_wrapper_rqa_placed.pb"/>
+  <File Type="PLACE-TIMING" Name="hdmi_wrapper_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="hdmi_wrapper_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="hdmi_wrapper_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="hdmi_wrapper_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="hdmi_wrapper_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="hdmi_wrapper_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="hdmi_wrapper_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="hdmi_wrapper_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="hdmi_wrapper_placed.dcp"/>
+  <File Type="PWROPT-TIMING" Name="hdmi_wrapper_timing_summary_pwropted.rpt"/>
+  <File Type="PWROPT-DRC" Name="hdmi_wrapper_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="hdmi_wrapper_pwropt.dcp"/>
+  <File Type="OPT-RQA-PB" Name="hdmi_wrapper_rqa_opted.pb"/>
+  <File Type="OPT-HWDEF" Name="hdmi_wrapper.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="hdmi_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="hdmi_wrapper_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="hdmi_wrapper_opt.dcp"/>
+  <File Type="OPT-TIMING" Name="hdmi_wrapper_timing_summary_opted.rpt"/>
+  <File Type="REPORTS-TCL" Name="hdmi_wrapper_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="hdmi_wrapper_timing_summary_init.rpt"/>
+  <File Type="PA-TCL" Name="hdmi_wrapper.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/audio_clock_regeneration_packet.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/audio_clock_regeneration_packet.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/audio_info_frame.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/audio_info_frame.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/audio_sample_packet.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/audio_sample_packet.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/auxiliary_video_information_info_frame.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/auxiliary_video_information_info_frame.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/hdmi.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/hdmi.sv"/>
+        <Attr Name="ImportTime" Val="1743078899"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/packet_assembler.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/packet_assembler.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/packet_picker.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/packet_picker.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/serializer.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/serializer.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/source_product_description_info_frame.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/source_product_description_info_frame.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/tmds_channel.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/tmds_channel.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/hdmi_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../CustomIP/rehsd_hdmi_IP/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="hdmi_wrapper"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/primary.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/hdmi_wrapper.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

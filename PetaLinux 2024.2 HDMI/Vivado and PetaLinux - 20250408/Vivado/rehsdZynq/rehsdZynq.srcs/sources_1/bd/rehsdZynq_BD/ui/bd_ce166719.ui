@@ -1,0 +1,262 @@
+{
+   "ActiveEmotionalView":"Color Coded",
+   "Color Coded_ExpandedHierarchyInLayout":"",
+   "Color Coded_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 8 -x 5500 -y 870 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 8 -x 5500 -y 910 -defaultsOSRD
+preplace port HDMI_DDC -pg 1 -lvl 8 -x 5500 -y 580 -defaultsOSRD
+preplace port HDMI_HPD -pg 1 -lvl 8 -x 5500 -y 610 -defaultsOSRD
+preplace port TMDS -pg 1 -lvl 8 -x 5500 -y 690 -defaultsOSRD
+preplace port SPI_0_0 -pg 1 -lvl 8 -x 5500 -y 950 -defaultsOSRD
+preplace port IIC_0 -pg 1 -lvl 8 -x 5500 -y 1210 -defaultsOSRD
+preplace port port-id_sdata_0_out -pg 1 -lvl 8 -x 5500 -y 1340 -defaultsOSRD
+preplace port port-id_sdata_0_in -pg 1 -lvl 0 -x 0 -y 1890 -defaultsOSRD
+preplace port port-id_lrclk_out -pg 1 -lvl 8 -x 5500 -y 1280 -defaultsOSRD
+preplace port port-id_sclk_out -pg 1 -lvl 8 -x 5500 -y 1310 -defaultsOSRD
+preplace port port-id_VGA_clock -pg 1 -lvl 0 -x 0 -y 2260 -defaultsOSRD
+preplace port port-id_VGA_hsync -pg 1 -lvl 8 -x 5500 -y 2220 -defaultsOSRD
+preplace port port-id_VGA_vsync -pg 1 -lvl 8 -x 5500 -y 2250 -defaultsOSRD
+preplace port port-id_TMDS2_clk_p -pg 1 -lvl 8 -x 5500 -y -210 -defaultsOSRD
+preplace port port-id_TMDS2_clk_n -pg 1 -lvl 8 -x 5500 -y -180 -defaultsOSRD
+preplace portBus ver -pg 1 -lvl 8 -x 5500 -y 240 -defaultsOSRD
+preplace portBus muten -pg 1 -lvl 8 -x 5500 -y 1240 -defaultsOSRD
+preplace portBus VGA_rgb -pg 1 -lvl 8 -x 5500 -y 2280 -defaultsOSRD
+preplace portBus TMDS2_data_p -pg 1 -lvl 8 -x 5500 -y -140 -defaultsOSRD
+preplace portBus TMDS2_data_n -pg 1 -lvl 8 -x 5500 -y -110 -defaultsOSRD
+preplace inst axi_vdma_0 -pg 1 -lvl 3 -x 2500 -y 750 -defaultsOSRD
+preplace inst proc_sys_reset_100 -pg 1 -lvl 1 -x 610 -y 560 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -x 1560 -y 990 -defaultsOSRD
+preplace inst rgb2dvi_0 -pg 1 -lvl 7 -x 5250 -y 740 -defaultsOSRD
+preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 6 -x 4450 -y 960 -defaultsOSRD
+preplace inst v_tc_0 -pg 1 -lvl 4 -x 3320 -y 710 -defaultsOSRD
+preplace inst axi_dynclk_0 -pg 1 -lvl 3 -x 2500 -y 460 -defaultsOSRD
+preplace inst axi_gpio_hdmi -pg 1 -lvl 3 -x 2500 -y 1010 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 7 -x 5250 -y 260 -defaultsOSRD
+preplace inst axi_peripheral -pg 1 -lvl 2 -x 1560 -y 600 -defaultsOSRD
+preplace inst axi_mem -pg 1 -lvl 1 -x 610 -y 1000 -defaultsOSRD
+preplace inst reset_12_288 -pg 1 -lvl 3 -x 2500 -y 1340 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 2 -x 1560 -y 1360 -defaultsOSRD
+preplace inst clk_wiz_mclk_in -pg 1 -lvl 2 -x 1560 -y 1590 -defaultsOSRD
+preplace inst audio_formatter_0 -pg 1 -lvl 4 -x 3320 -y 1500 -defaultsOSRD
+preplace inst smartconnect_audio_mem -pg 1 -lvl 3 -x 2500 -y 1560 -defaultsOSRD
+preplace inst smartconnect_audio_periph -pg 1 -lvl 3 -x 2500 -y 1790 -defaultsOSRD
+preplace inst i2s_transmitter_0 -pg 1 -lvl 6 -x 4450 -y 2880 -defaultsOSRD
+preplace inst i2s_receiver_0 -pg 1 -lvl 6 -x 4450 -y 3220 -defaultsOSRD
+preplace inst axi_iic_0 -pg 1 -lvl 6 -x 4450 -y 2430 -defaultsOSRD
+preplace inst VGA_Testing_Top_0 -pg 1 -lvl 3 -x 2500 -y 2250 -defaultsOSRD
+preplace inst axi_vdma_1 -pg 1 -lvl 3 -x 2500 -y -180 -defaultsOSRD
+preplace inst audio_clock_0 -pg 1 -lvl 5 -x 3760 -y 140 -defaultsOSRD
+preplace inst v_axi4s_vid_out_1 -pg 1 -lvl 6 -x 4450 -y -100 -defaultsOSRD
+preplace inst v_tc_1 -pg 1 -lvl 4 -x 3320 -y -170 -defaultsOSRD
+preplace inst proc_sys_reset_faster -pg 1 -lvl 1 -x 610 -y 320 -defaultsOSRD
+preplace inst axi_dynclk_1 -pg 1 -lvl 3 -x 2500 -y -440 -defaultsOSRD
+preplace inst rehsd_hdmi_0 -pg 1 -lvl 7 -x 5250 -y -160 -defaultsOSRD
+preplace inst axis_subset_converter_0 -pg 1 -lvl 4 -x 3320 -y 480 -defaultsOSRD
+preplace netloc VGA_Testing_Top_0_o_VGA_HSync 1 3 5 NJ 2230 NJ 2230 4210 2260 NJ 2260 5470J
+preplace netloc VGA_Testing_Top_0_o_VGA_RGB 1 3 5 NJ 2270 NJ 2270 3900 2280 NJ 2280 NJ
+preplace netloc VGA_Testing_Top_0_o_VGA_VSync 1 3 5 NJ 2250 NJ 2250 3920 2270 NJ 2270 5480J
+preplace netloc audio_formatter_0_irq_mm2s 1 1 4 1310 1690 NJ 1690 NJ 1690 3500
+preplace netloc audio_formatter_0_irq_s2mm 1 1 4 1300 1700 NJ 1700 NJ 1700 3480
+preplace netloc axi_dynclk_0_LOCKED_O 1 3 4 2770 860 NJ 860 4150 750 4660
+preplace netloc axi_dynclk_0_PXL_CLK_5X_O 1 3 4 2740 400 NJ 400 N 400 4690
+preplace netloc axi_dynclk_0_PXL_CLK_O 1 3 4 3120 880 3540 920 4140 760 4680
+preplace netloc axi_dynclk_1_PXL_CLK_O 1 3 4 3150J -340 NJ -340 4290J -310 4690
+preplace netloc axi_gpio_hdmi_ip2intc_irpt 1 1 3 1340 1660 2250J 1160 2700
+preplace netloc axi_iic_0_gpo 1 6 2 4670 2220 5430J
+preplace netloc axi_iic_0_iic2intc_irpt 1 1 6 1260 2330 NJ 2330 NJ 2330 NJ 2330 N 2330 4600
+preplace netloc axi_vdma_0_mm2s_introut 1 1 3 1320 1680 2260J 1170 2710
+preplace netloc axi_vdma_0_s2mm_introut 1 1 3 1290 1710 2290J 1670 2740
+preplace netloc axi_vdma_1_mm2s_introut 1 1 3 1270 1180 NJ 1180 2730J
+preplace netloc axi_vdma_1_s2mm_introut 1 1 3 1280 1190 NJ 1190 2720J
+preplace netloc clk_wiz_mclk_in_clk_mclk24 1 2 4 1790 1650 2700J 1710 N 1710 4180
+preplace netloc i2s_receiver_0_irq 1 1 6 1250 2590 NJ 2590 NJ 2590 NJ 2590 N 2590 4640
+preplace netloc i2s_transmitter_0_irq 1 1 6 1240 2600 NJ 2600 NJ 2600 NJ 2600 N 2600 4600
+preplace netloc i2s_transmitter_0_lrclk_out 1 5 3 4290 2740 4680 2230 5440J
+preplace netloc i2s_transmitter_0_sclk_out 1 5 3 4300 2750 4690 2240 5450J
+preplace netloc i2s_transmitter_0_sdata_0_out 1 6 2 4700J 2250 5460
+preplace netloc i_VGA_Clock_0_1 1 0 3 NJ 2260 NJ 2260 NJ
+preplace netloc proc_sys_reset_0_interconnect_aresetn1 1 0 2 360 220 790J
+preplace netloc proc_sys_reset_100_interconnect_aresetn 1 1 2 1320J 720 2300
+preplace netloc proc_sys_reset_100_peripheral_aresetn 1 1 5 1220 730 1800 -40 3150 70 3620 70 4250
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 430 660 1230 480 2240 -330 3130J 60 3630 60 4240
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 3 370 780 1320 780 1850
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 3 410 450 N 450 1870
+preplace netloc reset_24_peripheral_reset 1 3 3 3110 1650 N 1650 4190
+preplace netloc sdata_0_in_1 1 0 6 NJ 1890 NJ 1890 NJ 1890 NJ 1890 N 1890 3890
+preplace netloc v_axi4s_vid_out_0_vtg_ce 1 3 4 3160 560 N 560 N 560 4600
+preplace netloc v_axi4s_vid_out_1_vtg_ce 1 3 4 3160 -330 NJ -330 NJ -330 4600
+preplace netloc v_tc_0_irq 1 1 4 1330 1670 2270J 1440 3140J 1330 3480
+preplace netloc v_tc_1_irq 1 1 4 1270 1720 2280J 1450 3120J 1340 3500
+preplace netloc xlconcat_0_dout 1 1 2 1330 790 1780
+preplace netloc xlconstant_2_dout 1 7 1 5420J 240n
+preplace netloc v_axi4s_vid_out_0_vid_data 1 6 1 4650 690n
+preplace netloc v_axi4s_vid_out_0_vid_active_video 1 6 1 4670 750n
+preplace netloc v_axi4s_vid_out_0_vid_hsync 1 6 1 4610 710n
+preplace netloc v_axi4s_vid_out_0_vid_vsync 1 6 1 4700 730n
+preplace netloc axi_dynclk_1_PXL_CLK_5X_O 1 3 4 NJ -440 NJ -440 NJ -440 4700
+preplace netloc audio_clock_0_clk_out_48k 1 5 2 3900 -300 4680J
+preplace netloc rehsd_hdmi_0_TMDS2_clk_p 1 7 1 5420 -210n
+preplace netloc rehsd_hdmi_0_TMDS2_clk_n 1 7 1 5420 -180n
+preplace netloc rehsd_hdmi_0_TMDS2_data_p 1 7 1 5420 -150n
+preplace netloc rehsd_hdmi_0_TMDS2_data_n 1 7 1 5420 -130n
+preplace netloc v_axi4s_vid_out_1_vid_active_video 1 6 1 4670 -220n
+preplace netloc v_axi4s_vid_out_1_vid_data 1 6 1 4610 -200n
+preplace netloc v_axi4s_vid_out_1_locked 1 6 1 4700 -110n
+preplace netloc audio_formatter_0_m_axi_mm2s 1 2 3 2310 1660 NJ 1660 3490
+preplace netloc audio_formatter_0_m_axi_s2mm 1 2 3 2300 1680 NJ 1680 3530
+preplace netloc audio_formatter_0_m_axis_mm2s 1 4 2 N 1460 4230
+preplace netloc axi_gpio_0_GPIO2 1 3 5 2760 930 3510J 680 3900 610 NJ 610 NJ
+preplace netloc axi_iic_0_IIC 1 6 2 4660J 2210 5420
+preplace netloc axi_peripheral_M04_AXI 1 2 1 1820 -260n
+preplace netloc axi_peripheral_M05_AXI 1 2 2 1810 -320 2710J
+preplace netloc axi_peripheral_M06_AXI 1 2 1 1790 -470n
+preplace netloc axi_vdma_0_M_AXI_MM2S 1 0 4 390 420 N 420 2290 610 2690
+preplace netloc axi_vdma_0_M_AXI_S2MM 1 0 4 400 430 NJ 430 1830J 570 2710
+preplace netloc axi_vdma_1_M_AXIS_MM2S 1 3 3 2720J -320 NJ -320 4300
+preplace netloc axi_vdma_1_M_AXI_MM2S 1 0 4 420 440 NJ 440 2280J 560 2710J
+preplace netloc axi_vdma_1_M_AXI_S2MM 1 0 4 380 460 NJ 460 2260J 550 2690J
+preplace netloc i2s_receiver_0_m_axis_aud 1 3 4 3160 1350 NJ 1350 N 1350 4630
+preplace netloc processing_system7_0_DDR 1 2 6 1860J 890 NJ 890 NJ 890 4260 770 4640J 870 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 6 1820J 900 NJ 900 NJ 900 4270 780 4630J 910 NJ
+preplace netloc processing_system7_0_IIC_0 1 2 6 1810J 910 NJ 910 3520J 930 4160 580 NJ 580 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 1340 740 1790
+preplace netloc processing_system7_0_M_AXI_GP1 1 2 1 1820 1000n
+preplace netloc processing_system7_0_SPI_0 1 2 6 NJ 920 NJ 920 3530J 910 4280 790 4620J 880 5420J
+preplace netloc rgb2dvi_0_TMDS 1 7 1 5420J 690n
+preplace netloc smartconnect_0_M00_AXI 1 2 1 1840 430n
+preplace netloc smartconnect_0_M01_AXI 1 2 1 1840 560n
+preplace netloc smartconnect_0_M02_AXI 1 2 1 2280 580n
+preplace netloc smartconnect_0_M03_AXI 1 2 2 N 600 2760J
+preplace netloc smartconnect_1_M00_AXI 1 1 1 1250J 950n
+preplace netloc smartconnect_audio_mem_M00_AXI 1 1 3 1340 800 1830J 930 2690
+preplace netloc smartconnect_audio_periph_M00_AXI 1 3 1 3160 1430n
+preplace netloc smartconnect_audio_periph_M01_AXI 1 3 3 N 1780 NJ 1780 4220
+preplace netloc smartconnect_audio_periph_M02_AXI 1 3 3 N 1800 NJ 1800 3910
+preplace netloc smartconnect_audio_periph_M03_AXI 1 3 3 N 1820 NJ 1820 4200
+preplace netloc v_tc_0_vtiming_out 1 4 2 NJ 690 4290
+preplace netloc v_tc_1_vtiming_out 1 4 2 NJ -190 4000
+preplace netloc axis_subset_converter_0_M_AXIS 1 4 2 N 480 4300
+preplace netloc axi_vdma_0_M_AXIS_MM2S 1 3 1 2750 460n
+levelinfo -pg 1 0 610 1560 2500 3320 3760 4450 5250 5500
+pagesize -pg 1 -db -bbox -sgen -160 -1840 5680 4070
+",
+   "Color Coded_PinnedBlocks":"/axi_vdma_0|/proc_sys_reset_100|/processing_system7_0|/rgb2dvi_0|/v_axi4s_vid_out_0|/v_tc_0|/axi_dynclk_0|/axi_gpio_hdmi|/xlconstant_2|/axi_peripheral|/axi_mem|/clk_wiz_mclk_in|/i2s_receiver_0|/smartconnect_audio_periph|/VGA_Testing_Top_0|/smartconnect_audio_mem|/audio_formatter_0|/i2s_transmitter_0|/reset_12_288|/xlconcat_0|/axi_iic_0|/axi_vdma_1|/v_tc_1|/audio_clock_0|/v_axi4s_vid_out_1|/axi_dynclk_1|/proc_sys_reset_faster|",
+   "Color Coded_PinnedPorts":"ver|DDR|FIXED_IO|HDMI_DDC|TMDS|SPI_0_0|IIC_0|VGA_clock|VGA_vsync|sdata_0_out|VGA_hsync|sdata_0_in|lrclk_out|sclk_out|VGA_rgb|muten|HDMI_HPD|TMDS2_clk_p|TMDS2_clk_n|TMDS2_data_n|TMDS2_data_p|",
+   "Color Coded_ScaleFactor":"1.16629",
+   "Color Coded_TopLeft":"2383,222",
+   "Default View_ScaleFactor":"0.444499",
+   "Default View_TopLeft":"-277,-747",
+   "ExpandedHierarchyInLayout":"",
+   "HierExpandStatus_comment_0":"false",
+   "HierExpandStatus_comment_1":"false",
+   "HierExpandStatus_comment_2":"false",
+   "PinnedBlocks":"/axi_vdma_0|/axis_subset_converter_0|/proc_sys_reset_100|/proc_sys_reset_140|/processing_system7_0|/rgb2dvi_0|/v_axi4s_vid_out_0|/v_tc_0|/xlconcat_0|/xlconstant_1|/axi_dynclk_0|/axi_gpio_hdmi|/xlconstant_2|/i2s_receiver_0|/i2s_transmitter_0|/audio_formatter_0|/clk_wiz_100|/clk_wiz_12_288|/audio_reset|/axi_peripheral|/axi_mem|/axi_sound|",
+   "PinnedPorts":"ver|DDR|FIXED_IO|HDMI_DDC|HDMI_HPD|TMDS|SPI_0_0|lrclk_out|sclk_out|sdata_0_out_0|sdata_0_in_0|audioclk|",
+   "commentid":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 8 -x 3620 -y 300 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 8 -x 3620 -y 340 -defaultsOSRD
+preplace port HDMI_DDC -pg 1 -lvl 8 -x 3620 -y 380 -defaultsOSRD
+preplace port HDMI_HPD -pg 1 -lvl 8 -x 3620 -y -680 -defaultsOSRD
+preplace port TMDS -pg 1 -lvl 8 -x 3620 -y -150 -defaultsOSRD
+preplace port SPI_0_0 -pg 1 -lvl 8 -x 3620 -y 410 -defaultsOSRD
+preplace port port-id_lrclk_out -pg 1 -lvl 8 -x 3620 -y 850 -defaultsOSRD
+preplace port port-id_sclk_out -pg 1 -lvl 8 -x 3620 -y 880 -defaultsOSRD
+preplace port port-id_sdata_0_out_0 -pg 1 -lvl 8 -x 3620 -y 910 -defaultsOSRD
+preplace port port-id_sdata_0_in_0 -pg 1 -lvl 0 -x -20 -y 920 -defaultsOSRD
+preplace port port-id_audioclk -pg 1 -lvl 8 -x 3620 -y 1060 -defaultsOSRD
+preplace portBus ver -pg 1 -lvl 8 -x 3620 -y 130 -defaultsOSRD
+preplace inst axi_vdma_0 -pg 1 -lvl 4 -x 2320 -y -150 -defaultsOSRD
+preplace inst axis_subset_converter_0 -pg 1 -lvl 5 -x 2790 -y -360 -defaultsOSRD
+preplace inst proc_sys_reset_100 -pg 1 -lvl 1 -x 1030 -y -160 -defaultsOSRD
+preplace inst proc_sys_reset_140 -pg 1 -lvl 1 -x 1030 -y 120 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 3 -x 1750 -y 420 -defaultsOSRD
+preplace inst rgb2dvi_0 -pg 1 -lvl 7 -x 3480 -y -150 -defaultsOSRD
+preplace inst v_axi4s_vid_out_0 -pg 1 -lvl 6 -x 3160 -y -140 -defaultsOSRD
+preplace inst v_tc_0 -pg 1 -lvl 5 -x 2790 -y -70 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 5 -x 2790 -y 450 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 4 -x 2320 -y -340 -defaultsOSRD
+preplace inst axi_dynclk_0 -pg 1 -lvl 4 -x 2320 -y -490 -defaultsOSRD
+preplace inst axi_gpio_hdmi -pg 1 -lvl 4 -x 2320 -y -670 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 7 -x 3480 -y 130 -defaultsOSRD
+preplace inst axi_peripheral -pg 1 -lvl 3 -x 1750 -y -80 -defaultsOSRD
+preplace inst axi_mem -pg 1 -lvl 1 -x 1030 -y 330 -defaultsOSRD
+preplace inst i2s_receiver_0 -pg 1 -lvl 5 -x 2790 -y 870 -defaultsOSRD
+preplace inst i2s_transmitter_0 -pg 1 -lvl 6 -x 3160 -y 880 -defaultsOSRD
+preplace inst audio_formatter_0 -pg 1 -lvl 4 -x 2320 -y 860 -defaultsOSRD
+preplace inst clk_wiz_100 -pg 1 -lvl 2 -x 1360 -y 1170 -defaultsOSRD
+preplace inst clk_wiz_12_288 -pg 1 -lvl 3 -x 1750 -y 1160 -defaultsOSRD
+preplace inst audio_reset -pg 1 -lvl 4 -x 2320 -y 1200 -defaultsOSRD
+preplace inst axi_sound -pg 1 -lvl 1 -x 1030 -y 720 -defaultsOSRD
+preplace netloc axi_dynclk_0_LOCKED_O 1 4 3 N -470 NJ -470 3350
+preplace netloc axi_dynclk_0_PXL_CLK_5X_O 1 4 3 N -490 NJ -490 3340
+preplace netloc axi_dynclk_0_PXL_CLK_O 1 4 3 2610 -240 2990 -290 3320
+preplace netloc axi_gpio_0_ip2intc_irpt 1 4 1 2600J -660n
+preplace netloc axi_vdma_0_mm2s_introut 1 4 1 2590J -120n
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 0 5 810 -60 1210 -140 1520 -220 2140 -30 2580
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 800 470 1260 470 1510 -210 2110 -250 2570J 1030 2980
+preplace netloc processing_system7_0_FCLK_CLK1 1 0 6 830 240 NJ 240 1500 240 2100J -260 2620 -250 2970
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 850 0 N 0 1460 50 1980
+preplace netloc rst_processing_system7_0_150M_interconnect_aresetn 1 0 2 820 10 1210
+preplace netloc v_axi4s_vid_out_0_vtg_ce 1 4 3 2640 -280 N -280 3310
+preplace netloc v_tc_0_irq 1 4 2 2630 -230 2940
+preplace netloc xlconcat_0_dout 1 2 4 1530 600 N 600 N 600 2940
+preplace netloc xlconstant_1_dout 1 4 1 N -340
+preplace netloc xlconstant_2_dout 1 7 1 NJ 130
+preplace netloc clk_wiz_100_clk_out1 1 2 1 N 1170
+preplace netloc clk_wiz_12_288_clk_out1 1 3 5 2130 1030 2550 1060 3000 1060 N 1060 N
+preplace netloc proc_sys_reset_100_peripheral_aresetn 1 1 5 1250 1090 1490 1090 2120 1040 2600 1040 2990
+preplace netloc Net 1 3 3 2140 1020 2530 1080 3010
+preplace netloc i2s_transmitter_0_lrclk_out 1 4 4 2620 1070 NJ 1070 3330 850 N
+preplace netloc i2s_transmitter_0_sclk_out 1 4 4 2640 1050 NJ 1050 3350 880 N
+preplace netloc i2s_transmitter_0_sdata_0_out 1 6 2 NJ 910 NJ
+preplace netloc sdata_0_in_0_1 1 0 5 NJ 920 NJ 920 NJ 920 1980J 1010 2610J
+preplace netloc i2s_transmitter_0_irq 1 4 3 2620 580 NJ 580 3310
+preplace netloc i2s_receiver_0_irq 1 4 2 2640 570 2950
+preplace netloc audio_formatter_0_irq_mm2s 1 4 1 2510 490n
+preplace netloc audio_formatter_0_irq_s2mm 1 4 1 2590 510n
+preplace netloc axi_gpio_0_GPIO2 1 4 4 N -680 NJ -680 NJ -680 NJ
+preplace netloc axi_vdma_0_M_AXIS_MM2S 1 4 1 2520 -380n
+preplace netloc axi_vdma_0_M_AXI_MM2S 1 0 5 840 20 1220 40 N 40 N 40 2510
+preplace netloc axis_subset_converter_0_M_AXIS 1 5 1 3010 -360n
+preplace netloc processing_system7_0_DDR 1 3 5 NJ 300 NJ 300 NJ 300 NJ 300 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 3 5 2000J 310 NJ 310 NJ 310 NJ 310 3600J
+preplace netloc processing_system7_0_IIC_0 1 3 5 2130J 320 NJ 320 NJ 320 NJ 320 3590J
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 2 1530 -200 1970
+preplace netloc processing_system7_0_SPI_0 1 3 5 2140J 330 NJ 330 NJ 330 NJ 330 3580J
+preplace netloc rgb2dvi_0_TMDS 1 7 1 NJ -150
+preplace netloc smartconnect_0_M00_AXI 1 3 1 2000 -520n
+preplace netloc smartconnect_0_M01_AXI 1 3 1 1990 -690n
+preplace netloc smartconnect_0_M02_AXI 1 3 1 2010 -190n
+preplace netloc smartconnect_0_M03_AXI 1 3 2 2130 -50 2550J
+preplace netloc smartconnect_1_M00_AXI 1 1 2 NJ 330 1450
+preplace netloc v_axi4s_vid_out_0_vid_io_out 1 6 1 3330 -210n
+preplace netloc v_tc_0_vtiming_out 1 5 1 2950J -200n
+preplace netloc smartconnect_0_M04_AXI 1 3 1 1990 -60n
+preplace netloc smartconnect_0_M05_AXI 1 3 2 N -40 2550
+preplace netloc smartconnect_0_M06_AXI 1 3 3 N -20 2540 -220 2960
+preplace netloc audio_formatter_0_m_axis_mm2s 1 4 2 2560J 1020 2960
+preplace netloc i2s_receiver_0_m_axis_aud 1 3 3 2140 710 NJ 710 2940
+preplace netloc smartconnect_0_M00_AXI1 1 1 2 1270 410 NJ
+preplace netloc audio_formatter_0_m_axi_mm2s 1 0 5 820 620 NJ 620 NJ 620 NJ 620 2500
+preplace netloc audio_formatter_0_m_axi_s2mm 1 0 5 850 630 NJ 630 NJ 630 NJ 630 2520
+levelinfo -pg 1 -20 1030 1360 1750 2320 2790 3160 3480 3620
+pagesize -pg 1 -db -bbox -sgen -160 -840 3850 2460
+"
+}
+{
+   """""""""""""""""""""""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""""""""""""""""""""""":"4",
+   """""""""""""""""""""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""""""""""""""""""""":"7",
+   """""""""""""""""""""""""""""""""""""""""""""""""da_board_cnt""""""""""""""""""""""""""""""""""""""""""""""""":"1",
+   """""""""""""""""""""""""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""""""""""""""""""""""":"3",
+   """""""""""""""""""""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""""""""""""""""""":"1",
+   """"""""""""""""""""""""""""""""""""""""""""da_axi4_cnt"""""""""""""""""""""""""""""""""""""""""""":"5",
+   """"""""""""""""""""""""""""""""da_board_cnt"""""""""""""""""""""""""""""""":"3",
+   """"""""""""""""""""""""""""""""da_clkrst_cnt"""""""""""""""""""""""""""""""":"2",
+   """""""""""""""""""""""""""""da_axi4_cnt""""""""""""""""""""""""""""":"3",
+   """""""""""""""""""""""""""""da_clkrst_cnt""""""""""""""""""""""""""""":"1",
+   """"""""""""""""da_board_cnt"""""""""""""""":"2",
+   """"""""""""""""da_clkrst_cnt"""""""""""""""":"1"
+}

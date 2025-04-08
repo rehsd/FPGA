@@ -1,0 +1,13 @@
+set_property IOSTANDARD TMDS_33 [get_ports TMDS2_clk_p]
+set_property IOSTANDARD TMDS_33 [get_ports TMDS2_clk_n]
+set_property DIFF_TERM TRUE [get_ports {TMDS2_clk_p TMDS2_clk_n}]
+
+set_property IOSTANDARD TMDS_33 [get_ports TMDS2_data_p[0]]
+set_property IOSTANDARD TMDS_33 [get_ports TMDS2_data_n[0]]
+set_property IOSTANDARD TMDS_33 [get_ports TMDS2_data_p[1]]
+set_property IOSTANDARD TMDS_33 [get_ports TMDS2_data_n[1]]
+set_property IOSTANDARD TMDS_33 [get_ports TMDS2_data_p[2]]
+set_property IOSTANDARD TMDS_33 [get_ports TMDS2_data_n[2]]
+set_property DIFF_TERM TRUE [get_ports {TMDS2_data_p[0] TMDS2_data_n[0]}]
+set_property DIFF_TERM TRUE [get_ports {TMDS2_data_p[1] TMDS2_data_n[1]}]
+set_property DIFF_TERM TRUE [get_ports {TMDS2_data_p[2] TMDS2_data_n[2]}]

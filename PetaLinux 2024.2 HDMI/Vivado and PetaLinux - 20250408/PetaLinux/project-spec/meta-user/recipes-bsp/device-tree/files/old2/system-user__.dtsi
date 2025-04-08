@@ -1,0 +1,546 @@
+/include/ "system-conf.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+/ {
+	model = "rehsd Zynq-7000 Board";
+	compatible = "rehsd,zynq-7000", "xlnx,zynq-7000";
+	chosen {
+		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio video=HDMI-A-1:1280x720M-24@60 loglevel=7";
+	};
+	
+	usb_phy0: usb_phy@0 {
+		compatible = "ulpi-phy";
+		#phy-cells = <0>;	
+		reg = <0xe0002000 0x1000>;
+		view-port = <0x0170>;
+		reset-gpios = <&gpio0 46 1>;
+		drv-vbus;
+	};
+};
+&amba_pl {
+	ranges;
+	compatible = "simple-bus";
+	#address-cells = <1>;
+	#size-cells = <1>;
+	firmware-name = "rehsdZynq_BD_wrapper.bit.bin";
+	clocking1: clocking1 {
+		compatible = "xlnx,fclk";
+		assigned-clocks = <&clkc 16>;
+		assigned-clock-rates = <140000000>;
+		#clock-cells = <0>;
+		clock-output-names = "fabric_clk";
+		clocks = <&clkc 16>;
+	};
+	clocking0: clocking0 {
+		compatible = "xlnx,fclk";
+		assigned-clocks = <&clkc 15>;
+		assigned-clock-rates = <100000000>;
+		#clock-cells = <0>;
+		clock-output-names = "fabric_clk";
+		clocks = <&clkc 15>;
+	};
+	afi1: afi1@f8009000 {
+		status = "okay";
+		compatible = "xlnx,afi-fpga";
+		#address-cells = <1>;
+		reg = <0xF8009000 0x1000>;
+		#size-cells = <0>;
+		xlnx,afi-width = <0>;
+	};
+	afi0: afi0@f8008000 {
+		status = "okay";
+		compatible = "xlnx,afi-fpga";
+		#address-cells = <1>;
+		reg = <0xF8008000 0x1000>;
+		#size-cells = <0>;
+		xlnx,afi-width = <0>;
+	};
+	misc_clk_1 {
+		compatible = "fixed-clock";
+		clock-frequency = <100000000>;
+		#clock-cells = <0>;
+	};
+	misc_clk_0 {
+		compatible = "fixed-clock";
+		clock-frequency = <12288000>;
+		#clock-cells = <0>;
+	};
+	audio_formatter_0: audio_formatter@43c00000 {
+		xlnx,rx = <&i2s_receiver_0>;
+		interrupts = < 0 34 4 0 35 4 >;
+		compatible = "xlnx,audio-formatter-1.0" , "xlnx,audio-formatter-1.0";
+		xlnx,packing-mode-mm2s = <0>;
+		xlnx,mm2s-async-clock = <1>;
+		xlnx,tx = <&i2s_transmitter_0>;
+		xlnx,mm2s-addr-width = <64>;
+		interrupt-parent = <&intc>;
+		xlnx,rable = <0>;
+		xlnx,s2mm-dataformat = <1>;
+		xlnx,ip-name = "audio_formatter";
+		reg = <0x43c00000 0x10000>;
+		xlnx,include-s2mm = <1>;
+		xlnx,max-num-channels-mm2s = <2>;
+		clocks = <&misc_clk_0>, <&clkc 15>, <&clkc 15>, <&clkc 15>;
+		xlnx,s2mm-async-clock = <1>;
+		xlnx,packing-mode-s2mm = <0>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,s2mm-addr-width = <64>;
+		status = "okay";
+		clock-names = "aud_mclk" , "m_axis_mm2s_aclk" , "s_axi_lite_aclk" , "s_axis_s2mm_aclk";
+		xlnx,mm2s-dataformat = <3>;
+		interrupt-names = "irq_mm2s" , "irq_s2mm";
+		xlnx,include-mm2s = <1>;
+		xlnx,max-num-channels-s2mm = <2>;
+		xlnx,name = "audio_formatter_0";
+		status = "okay";
+	};
+	/*
+	axi_dynclk_0: axi_dynclk@43c10000 {
+			compatible = "xlnx,axi-dynclk-1.2";
+			xlnx,krefclkfreqhz = <100000000>;
+			xlnx,kversionminor = <2>;
+			xlnx,rable = <0>;
+			xlnx,ip-name = "axi_dynclk";
+			reg = <0x43c10000 0x10000>;
+			clocks = <&clkc 15>, <&clkc 15>;
+			xlnx,kversionmajor = <1>;
+			xlnx,edk-iptype = "PERIPHERAL";
+			status = "okay";
+			clock-names = "REF_CLK_I" , "s_axi_lite_aclk";
+			xlnx,name = "axi_dynclk_0";
+		};
+	*/
+	axi_gpio_hdmi: gpio@41200000 {
+		#interrupt-cells = <2>;
+		interrupts = < 0 29 4 >;
+		xlnx,gpio-board-interface = "Custom";
+		compatible = "xlnx,axi-gpio-2.0" , "xlnx,xps-gpio-1.00.a";
+		xlnx,all-outputs = <0>;
+		#gpio-cells = <2>;
+		xlnx,gpio-width = <1>;
+		interrupt-parent = <&intc>;
+		xlnx,rable = <0>;
+		xlnx,dout-default = <0x0>;
+		xlnx,is-dual = <0>;
+		xlnx,ip-name = "axi_gpio";
+		xlnx,tri-default-2 = <0xffffffff>;
+		reg = <0x41200000 0x10000>;
+		xlnx,all-inputs-2 = <0>;
+		clocks = <&clkc 15>;
+		xlnx,all-outputs-2 = <0>;
+		gpio-controller;
+		xlnx,interrupt-present = <1>;
+		xlnx,gpio2-board-interface = "Custom";
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,dout-default-2 = <0x0>;
+		status = "okay";
+		xlnx,gpio2-width = <32>;
+		clock-names = "s_axi_aclk";
+		interrupt-controller;
+		interrupt-names = "ip2intc_irpt";
+		xlnx,tri-default = <0xffffffff>;
+		xlnx,name = "axi_gpio_hdmi";
+		xlnx,all-inputs = <1>;
+	};
+	/*
+	axi_vdma_0: dma@43000000 {
+		xlnx,enable-debug-info-9 = <0x0>;
+		xlnx,enable-s2mm-frm-counter = <1>;
+		xlnx,enable-mm2s-delay-counter = <1>;
+		xlnx,dlytmr-resolution = <125>;
+		xlnx,enable-s2mm-buf-full = <0>;
+		xlnx,rable = <0>;
+		xlnx,ip-name = "axi_vdma";
+		xlnx,s2mm-genlock-num-masters = <1>;
+		reg = <0x43000000 0x10000>;
+		xlnx,enable-s2mm-fsync-out = <0>;
+		xlnx,use-mm2s-fsync = <0>;
+		xlnx,s2mm-linebuffer-thresh = <4>;
+		xlnx,enable-mm2s-frm-counter = <1>;
+		xlnx,m-axis-mm2s-tdata-width = <24>;
+		xlnx,enable-all = <0>;
+		xlnx,dynamic-resolution = <1>;
+		xlnx,enable-s2mm-rst-out = <0>;
+		interrupt-names = "mm2s_introut";
+		xlnx,s2mm-sof-enable = <0x1>;
+		xlnx,mm2s-genlock-num-masters = <1>;
+		xlnx,enable-mm2s-fsync-out = <0>;
+		xlnx,mm2s-linebuffer-thresh = <4>;
+		compatible = "xlnx,axi-vdma-6.3" , "xlnx,axi-vdma-1.00.a";
+		xlnx,enable-tstvec = <0>;
+		interrupt-parent = <&intc>;
+		xlnx,s2mm-max-burst-length = <8>;
+		xlnx,enable-mm2s-rst-out = <0>;
+		xlnx,mm2s-sof-enable = <1>;
+		xlnx,include-s2mm-dre = <0x0>;
+		xlnx,enable-s2mm-frmstr-reg = <0>;
+		xlnx,m-axi-s2mm-data-width = <64>;
+		xlnx,enable-s2mm-sts-reg = <0>;
+		xlnx,mm2s-max-burst-length = <8>;
+		status = "okay";
+		xlnx,include-mm2s-dre = <0x0>;
+		xlnx,name = "axi_vdma_0";
+		xlnx,enable-mm2s-frmstr-reg = <0>;
+		interrupts = < 0 30 4 >;
+		xlnx,m-axi-mm2s-data-width = <64>;
+		xlnx,flush-on-fsync = <0x1>;
+		xlnx,include-s2mm-sf = <1>;
+		xlnx,single-interface = <0>;
+		xlnx,s2mm-linebuffer-depth = <0x200>;
+		xlnx,include-s2mm = <0x0>;
+		xlnx,addr-width = <32>;
+		clocks = <&clkc 16>, <&clkc 16>, <&clkc 15>;
+		xlnx,s-axis-s2mm-tdata-width = <32>;
+		xlnx,enable-debug-info-10 = <0>;
+		xlnx,addrwidth = <0x20>;
+		xlnx,enable-debug-info-11 = <0>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,enable-debug-info-12 = <0>;
+		xlnx,use-fsync = <1>;
+		xlnx,s2mm-genlock-repeat-en = <1>;
+		xlnx,enable-debug-info-13 = <0x0>;
+		xlnx,enable-vert-flip = <0x0>;
+		xlnx,include-mm2s-sf = <0>;
+		xlnx,enable-debug-info-14 = <0x1>;
+		xlnx,include-internal-genlock = <0x1>;
+		clock-names = "m_axi_mm2s_aclk" , "m_axis_mm2s_aclk" , "s_axi_lite_aclk";
+		xlnx,enable-debug-info-15 = <0x1>;
+		xlnx,mm2s-linebuffer-depth = <0x200>;
+		xlnx,include-mm2s = <0x1>;
+		xlnx,s2mm-genlock-mode = <0x0>;
+		xlnx,flush-fsync = <0x1>;
+		xlnx,select-xpm = <0>;
+		xlnx,s2mm-data-width = <0x40>;
+		xlnx,num-fstores = <0x4>;
+		xlnx,enable-s2mm-param-updt = <0>;
+		xlnx,enable-vidparam-reads = <0x1>;
+		xlnx,mm2s-genlock-repeat-en = <0>;
+		xlnx,prmry-is-aclk-async = <0>;
+		xlnx,s2mm-tdata-width = <0x20>;
+		#dma-cells = <1>;
+		xlnx,enable-vidprmtr-reads = <1>;
+		xlnx,mm2s-genlock-mode = <0x0>;
+		xlnx,enable-debug-info-0 = <0>;
+		xlnx,enable-debug-all = <0x0>;
+		xlnx,enable-debug-info-1 = <0x0>;
+		xlnx,mm2s-data-width = <0x40>;
+		xlnx,enable-debug-info-2 = <0>;
+		xlnx,enable-mm2s-param-updt = <0>;
+		xlnx,enable-debug-info-3 = <0>;
+		xlnx,enable-s2mm-delay-counter = <1>;
+		xlnx,enable-debug-info-4 = <0>;
+		xlnx,enable-debug-info-5 = <0x0>;
+		xlnx,mm2s-tdata-width = <0x18>;
+		xlnx,enable-debug-info-6 = <0x1>;
+		xlnx,enable-debug-info-7 = <0x1>;
+		xlnx,use-s2mm-fsync = <2>;
+		xlnx,enable-debug-info-8 = <0>;
+		xlnx,enable-mm2s-buf-empty = <0>;
+		dma_channel_43000000: dma-channel@43000000 {
+			interrupts = < 0 30 4 >;
+			xlnx,datawidth = <0x18>;
+			xlnx,device-id = <0x0>;
+			compatible = "xlnx,axi-vdma-mm2s-channel";
+		};
+	};
+	*/
+	digilent_hdmi {
+		compatible = "digilent,hdmi";
+		clocks = <&axi_dynclk_0>;
+		clock-names = "clk";
+		digilent,edid-i2c = <&i2c0>;
+		digilent,fmax = <150000>;
+		digilent,hmax = <1920>;
+		digilent,vmax = <1080>;
+		digilent,hpref = <1280>;
+		digilent,vpref = <720>;
+		port@0 { 
+			hdmi_ep: endpoint { 
+				remote-endpoint = <&pl_disp_ep>; 
+			}; 
+		}; 
+	};
+	xlnx_pl_disp {
+		compatible = "xlnx,pl-disp";
+		device-id = <0xaa01>;
+		dmas = <&axi_vdma_0 0>; 	
+		dma-names = "dma0"; 
+		xlnx,vformat = "RG24"; 	/* "RG24" -- XB24.no BG24.no AR24.no XR24.no RG24.yes */
+		xlnx,bridge = <&v_tc_0>; 
+		port@0 { 
+			pl_disp_ep: endpoint { 
+				remote-endpoint = <&hdmi_ep>; 
+			}; 
+		};
+	};
+	i2s_receiver_0: i2s_receiver@43c20000 {
+		aud_mclk = <12288000>;
+		interrupts = < 0 33 4 >;
+		compatible = "xlnx,i2s-receiver-1.0" , "xlnx,i2s-receiver-1.0";
+		xlnx,dwidth = <0x18>;
+		xlnx,depth = <0x80>;
+		interrupt-parent = <&intc>;
+		xlnx,rable = <0>;
+		xlnx,ip-name = "i2s_receiver";
+		reg = <0x43c20000 0x10000>;
+		clocks = <&misc_clk_0>, <&clkc 15>, <&clkc 15>;
+		xlnx,num-channels = <0x1>;
+		xlnx,snd-pcm = <&audio_formatter_0>;
+		xlnx,i2srx-board-interface = "Custom";
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,is-master = <0>;
+		status = "okay";
+		clock-names = "aud_mclk" , "m_axis_aud_aclk" , "s_axi_ctrl_aclk";
+		xlnx,32bit-lr = <1>;
+		interrupt-names = "irq";
+		xlnx,name = "i2s_receiver_0";
+		status = "okay";
+	};
+	i2s_transmitter_0: i2s_transmitter@43c30000 {
+		aud_mclk = <12288000>;
+		interrupts = < 0 32 4 >;
+		compatible = "xlnx,i2s-transmitter-1.0" , "xlnx,i2s-transmitter-1.0";
+		xlnx,dwidth = <0x18>;
+		xlnx,depth = <0x80>;
+		interrupt-parent = <&intc>;
+		xlnx,rable = <0>;
+		xlnx,ip-name = "i2s_transmitter";
+		reg = <0x43c30000 0x10000>;
+		clocks = <&misc_clk_0>, <&clkc 15>, <&clkc 15>;
+		xlnx,num-channels = <0x1>;
+		xlnx,snd-pcm = <&audio_formatter_0>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,is-master = <1>;
+		xlnx,i2stx-board-interface = "Custom";
+		status = "okay";
+		clock-names = "aud_mclk" , "s_axi_ctrl_aclk" , "s_axis_aud_aclk";
+		xlnx,32bit-lr = <1>;
+		interrupt-names = "irq";
+		xlnx,name = "i2s_transmitter_0";
+		status = "okay";
+	};
+	/*
+	v_tc_0 {
+		xlnx,gen-vsync-en = <1>;
+		xlnx,gen-hframe-size = <1650>;
+		xlnx,num-fsyncs = <1>;
+		xlnx,gen-hactive-size = <1280>;
+		xlnx,gen-video-format = <2>;
+		xlnx,gen-f1-vblank-hstart = <1280>;
+		xlnx,active-video-detection;
+		xlnx,horizontal-sync-generation;
+		xlnx,gen-vblank-en = <1>;
+		xlnx,rable = <0>;
+		xlnx,gen-avideo-en = <1>;
+		xlnx,ip-name = "v_tc";
+		xlnx,fsync-hstart10 = <0>;
+		xlnx,max-pixels = <4096>;
+		xlnx,gen-fieldid-en = <0>;
+		reg = <0x43c40000 0x10000>;
+		xlnx,det-vblank-en = <1>;
+		xlnx,fsync-hstart11 = <0>;
+		xlnx,fsync-hstart12 = <0>;
+		xlnx,gen-interlaced = <0>;
+		xlnx,det-avideo-en = <1>;
+		xlnx,fsync-hstart13 = <0>;
+		xlnx,fsync-hstart14 = <0>;
+		xlnx,gen-f0-vblank-hend = <1280>;
+		xlnx,fsync-hstart15 = <0>;
+		xlnx,det-hsync-en = <1>;
+		interrupt-names = "irq";
+		xlnx,enable-generation;
+		xlnx,gen-avideo-polarity = <1>;
+		xlnx,max-lines-per-frame = <4096>;
+		xlnx,has-axi4-lite = <1>;
+		compatible = "xlnx,v-tc-6.2" , "xlnx,v-tc-6.1" , "xlnx,bridge-v-tc-6.1";
+		xlnx,max-clocks-per-line = <4096>;
+		xlnx,gen-f0-vframe-size = <750>;
+		xlnx,gen-f0-vblank-hstart = <1280>;
+		interrupt-parent = <&intc>;
+		xlnx,max-lines = <4096>;
+		xlnx,gen-f0-vsync-vstart = <724>;
+		xlnx,horizontal-blank-generation;
+		xlnx,gen-hsync-end = <1430>;
+		xlnx,gen-f0-vsync-hstart = <1280>;
+		xlnx,gen-f1-vsync-hend = <1280>;
+		xlnx,vertical-blank-detection;
+		xlnx,gen-vsync-polarity = <1>;
+		xlnx,fsync-vstart0 = <0>;
+		xlnx,gen-hsync-polarity = <1>;
+		xlnx,fsync-vstart1 = <0>;
+		status = "okay";
+		xlnx,fsync-vstart2 = <0>;
+		xlnx,gen-hsync-start = <1390>;
+		xlnx,gen-f0-vsync-vend = <729>;
+		xlnx,fsync-vstart3 = <0>;
+		xlnx,vertical-sync-detection;
+		xlnx,frame-syncs = <1>;
+		xlnx,fsync-vstart4 = <0>;
+		xlnx,gen-vactive-size = <720>;
+		xlnx,name = "v_tc_0";
+		xlnx,fsync-vstart5 = <0>;
+		interrupts = < 0 31 4 >;
+		xlnx,gen-achroma-en = <0>;
+		xlnx,fsync-vstart6 = <0>;
+		xlnx,det-fieldid-en = <0>;
+		xlnx,fsync-vstart7 = <0>;
+		xlnx,gen-hsync-en = <1>;
+		xlnx,fsync-vstart8 = <0>;
+		xlnx,fsync-vstart10 = <0>;
+		xlnx,fsync-vstart9 = <0>;
+		xlnx,fsync-vstart11 = <0>;
+		xlnx,arbitrary-res-en = <0>;
+		xlnx,fsync-vstart12 = <0>;
+		xlnx,fsync-vstart13 = <0>;
+		clocks = <&misc_clk_1>, <&clkc 15>;
+		xlnx,fsync-vstart14 = <0>;
+		xlnx,fsync-vstart15 = <0>;
+		xlnx,gen-cparity = <0>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,vertical-sync-generation;
+		xlnx,gen-f1-vblank-hend = <1280>;
+		xlnx,det-vsync-en = <1>;
+		xlnx,gen-vblank-polarity = <1>;
+		xlnx,fsync-hstart0 = <0>;
+		clock-names = "clk" , "s_axi_aclk";
+		xlnx,interlace-en = <0>;
+		xlnx,gen-auto-switch = <0>;
+		xlnx,fsync-hstart1 = <0>;
+		xlnx,fsync-hstart2 = <0>;
+		xlnx,active-video-generation;
+		xlnx,fsync-hstart3 = <0>;
+		xlnx,fsync-hstart4 = <0>;
+		xlnx,horizontal-blank-detection;
+		xlnx,fsync-hstart5 = <0>;
+		xlnx,gen-f1-vframe-size = <750>;
+		xlnx,fsync-hstart6 = <0>;
+		xlnx,fsync-hstart7 = <0>;
+		xlnx,fsync-hstart8 = <0>;
+		xlnx,gen-hblank-en = <1>;
+		xlnx,fsync-hstart9 = <0>;
+		xlnx,horizontal-sync-detection;
+		xlnx,gen-f1-vsync-vend = <729>;
+		xlnx,detect-en = <0>;
+		xlnx,det-hblank-en = <1>;
+		xlnx,vid-ppc = <4>;
+		xlnx,has-intc-if = <0>;
+		xlnx,generate-en = <1>;
+		xlnx,gen-achroma-polarity = <1>;
+		xlnx,sync-en = <0>;
+		xlnx,det-achroma-en = <0>;
+		xlnx,generator;
+		xlnx,gen-f1-vsync-vstart = <724>;
+		xlnx,vertical-blank-generation;
+		xlnx,gen-hblank-polarity = <1>;
+		xlnx,video-mode = "720p";
+		xlnx,gen-fieldid-polarity = <1>;
+		xlnx,gen-f1-vsync-hstart = <1280>;
+		xlnx,gen-f0-vsync-hend = <1280>;
+	};
+	*/
+};
+&axi_vdma_0 {
+	device-id = <0xaa02>;
+	reg = < 0x43000000 0x10000 >;
+	dma-ranges = <0x00000000 0x00000000 0x40000000>;
+	xlnx,num-fstores = <0x4>;
+	/*
+	vdma-channel@43000000 {
+		xlnx,datawidth = <0x40>;
+		xlnx,device-id = <0x0>;
+	} ;
+	*/
+};
+&v_tc_0 {
+	compatible = "xlnx,bridge-v-tc-6.1";	/* 6.2 is the from the block design, but doesn't work here */
+	xlnx,pixels-per-clock = <1>; 
+};
+&axi_dynclk_0 {
+	compatible = "dglnt,axi-dynclk";
+	#clock-cells = <0>;
+	clocks = <&clkc 15>;
+};
+&gem0 {
+        phy-handle = <&ethernet_phy>;
+        ethernet_phy: ethernet-phy@0 {
+                device_type = "ethernet-phy";
+                reg = <0>;
+                /* dt-bindings/phy/realtek.h */
+                /* #define REALTEK_LED_LINK10              BIT(0)
+                   #define REALTEK_LED_LINK100             BIT(1)
+                   #define REALTEK_LED_LINK1000            BIT(3)
+                   #define REALTEK_LED_ACT                 BIT(4)
+                   #define REALTEK_LED_DEFAULT             BIT(7)
+                */
+                /* LED0=10+A, LED1=100+A, LED2=1000+A */
+                realtek,leds-config = <0x11 0x12 0x18>;
+        };
+};
+&usb0 {
+   	status = "okay";
+   	dr_mode = "host";
+   	usb-phy = <&usb_phy0>;
+
+	
+	/* HID (Human Interface Device) for mouse */
+	/* mouse@1 {
+	    compatible = "usb-mouse";
+	    status = "okay";
+	};
+	*/
+
+	usb2vga {
+		compatible = "sis,sisfb";	/* sisusb (x), sisfb (x), sisusbvga, sis ? */
+		vendor_id = <0x0711>;
+		product_id = <0x0900>;
+		status = "okay"; 
+		framebuffer {
+			label = "fb1"; 
+			compatible = "linux,fb"; 
+			linux,fb_base = <0x0>; 
+		};
+	};
+};
+&i2c0 {
+    	clock-frequency = <100000>;
+    	status = "okay";
+};
+&i2c1 {
+	status = "okay";
+	ds3231: rtc@68 {
+		compatible = "maxim,ds3231";
+		reg = <0x68>;
+	};
+};
+&spi0 {
+	is-decoded-cs = <0>;
+	num-cs = <3>;
+	bus-num = <0>;
+	status = "okay";
+	spidev@0x00 {
+		//compatible = "spidev";
+		//see https://www.hackster.io/whitney-knitter/spidev-tutorial-for-zynq-7000-fpga-devices-b5e399
+		//see https://stackoverflow.com/questions/53634892/linux-spidev-why-it-shouldnt-be-directly-in-devicetree
+		compatible = "rohm,dh2228fv";
+		spi-max-frequency = <1000000>;    //max of 25 Mhz
+		reg = <0>;
+		
+		//SPI mode
+		spi-cpol = <0>;
+		spi-cpha = <0>;
+	};
+	spidev@0x01 {
+		compatible = "spidev";
+		spi-max-frequency = <1000000>;
+		reg = <1>;
+	};
+	spidev@0x02 {
+		compatible = "spidev";
+		spi-max-frequency = <1000000>;
+		reg = <2>;
+	};
+};
+
+
+
+
+

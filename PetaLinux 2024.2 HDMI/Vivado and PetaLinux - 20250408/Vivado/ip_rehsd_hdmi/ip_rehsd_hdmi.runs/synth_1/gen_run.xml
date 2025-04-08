@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-3" LaunchTime="1743993708" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hdmi_wrapper.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="hdmi_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="hdmi_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="hdmi_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="hdmi_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="hdmi_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="hdmi_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="hdmi_wrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="hdmi_wrapper_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="hdmi_wrapper.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/audio_clock_regeneration_packet.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/audio_clock_regeneration_packet.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/audio_info_frame.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/audio_info_frame.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/audio_sample_packet.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/audio_sample_packet.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/auxiliary_video_information_info_frame.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/auxiliary_video_information_info_frame.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/hdmi.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/hdmi.sv"/>
+        <Attr Name="ImportTime" Val="1743078899"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/packet_assembler.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/packet_assembler.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/packet_picker.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/packet_picker.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/serializer.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/serializer.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/source_product_description_info_frame.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/source_product_description_info_frame.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rehsd_hdmi/tmds_channel.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../CustomIP/rehsd_hdmi/tmds_channel.sv"/>
+        <Attr Name="ImportTime" Val="1706995210"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/hdmi_wrapper.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../CustomIP/rehsd_hdmi_IP/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="hdmi_wrapper"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/primary.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/hdmi_wrapper.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
