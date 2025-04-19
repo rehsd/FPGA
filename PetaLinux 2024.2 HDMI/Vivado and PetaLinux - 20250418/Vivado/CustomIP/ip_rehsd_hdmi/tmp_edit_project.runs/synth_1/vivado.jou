@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Fri Apr 11 20:09:56 2025
+# Process ID         : 126425
+# Current directory  : /home/rich/VivadoProjects/CustomIP/ip_rehsd_hdmi/tmp_edit_project.runs/synth_1
+# Command line       : vivado -log hdmi_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_wrapper.tcl
+# Log file           : /home/rich/VivadoProjects/CustomIP/ip_rehsd_hdmi/tmp_edit_project.runs/synth_1/hdmi_wrapper.vds
+# Journal file       : /home/rich/VivadoProjects/CustomIP/ip_rehsd_hdmi/tmp_edit_project.runs/synth_1/vivado.jou
+# Running On         : i14700f-Ubuntu
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 24.04.2 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-14700F
+# CPU Frequency      : 5300.000 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 28
+# Host memory        : 33424 MB
+# Swap memory        : 77309 MB
+# Total Virtual      : 110734 MB
+# Available Virtual  : 100784 MB
+#-----------------------------------------------------------
+source hdmi_wrapper.tcl -notrace

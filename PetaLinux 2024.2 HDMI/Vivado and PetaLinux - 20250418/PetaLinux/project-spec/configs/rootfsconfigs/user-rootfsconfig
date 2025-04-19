@@ -1,0 +1,30 @@
+#Note: Mention Each package in individual line
+#These packages will get added into rootfs menu entry
+
+CONFIG_clk-dglnt-dynclk
+CONFIG_digilent-hdmi
+CONFIG_flash-led
+CONFIG_fbtest
+CONFIG_doom
+CONFIG_rehsdmisc
+CONFIG_spidev-test
+CONFIG_cs4344
+CONFIG_wm8960-snddrv
+CONFIG_sndserver
+CONFIG_nano
+CONFIG_libsdl2
+CONFIG_gpm
+CONFIG_imagemagick
+CONFIG_wayland
+CONFIG_wayland-protocols
+CONFIG_wayland-utils
+CONFIG_weston
+CONFIG_weston-init
+CONFIG_vlc
+CONFIG_pcmanfm
+CONFIG_sysbench
+CONFIG_clk-dglnt-dynclk2
+CONFIG_digilent-hdmi2
+CONFIG_rehsd-hdmi
+CONFIG_rehsd-vga
+CONFIG_rehsd-hdmi2

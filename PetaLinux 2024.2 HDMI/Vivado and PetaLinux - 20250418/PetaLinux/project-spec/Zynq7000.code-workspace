@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../xilinx/Vitis/2024.2/bin/sdt_out"
+		}
+	]
+}

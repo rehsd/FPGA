@@ -1,0 +1,93 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Fri Apr 11 20:10:48 2025
+| Host         : i14700f-Ubuntu running 64-bit Ubuntu 24.04.2 LTS
+| Command      : report_control_sets -verbose -file hdmi_wrapper_control_sets_placed.rpt
+| Design       : hdmi_wrapper
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    15 |
+|    Minimum number of control sets                        |    15 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    54 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    15 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     2 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     6 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              44 |           21 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              91 |           39 |
+| Yes          | No                    | No                     |              38 |           17 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              77 |           29 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|     Clock Signal     |                                              Enable Signal                                              |                                             Set/Reset Signal                                            | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_audio_IBUF_BUFG |                                                                                                         |                                                                                                         |                2 |              2 |         1.00 |
+|  clk_pixel_IBUF_BUFG | aresetn_IBUF                                                                                            | hdmi_inst/true_hdmi_output.packet_picker/SR[0]                                                          |                4 |              4 |         1.00 |
+|  clk_pixel_IBUF_BUFG | hdmi_inst/true_hdmi_output.data_island_period                                                           | hdmi_inst/true_hdmi_output.packet_picker/SR[0]                                                          |                2 |              5 |         2.50 |
+|  clk_audio_IBUF_BUFG |                                                                                                         | hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/clk_audio_counter[5]_i_1_n_0   |                2 |              6 |         3.00 |
+|  clk_pixel_IBUF_BUFG | hdmi_inst/true_hdmi_output.packet_picker/frame_counter[7]_i_2_n_0                                       | hdmi_inst/true_hdmi_output.packet_picker/SR[0]                                                          |                1 |              6 |         6.00 |
+|  clk_pixel_IBUF_BUFG | hdmi_inst/true_hdmi_output.packet_assembler/parity                                                      | hdmi_inst/true_hdmi_output.packet_assembler/parity[4][7]_i_1_n_0                                        |                2 |              8 |         4.00 |
+|  clk_pixel_IBUF_BUFG | hdmi_inst/tmds_gen[0].tmds_channel/tmds[9]_i_2__0_n_0                                                   | hdmi_inst/tmds_gen[0].tmds_channel/tmds[9]_i_1__1_n_0                                                   |                6 |             10 |         1.67 |
+|  clk_pixel_IBUF_BUFG |                                                                                                         | hdmi_inst/tmds_gen[0].tmds_channel/SR[0]                                                                |                6 |             12 |         2.00 |
+|  clk_pixel_IBUF_BUFG | hdmi_inst/cy0                                                                                           | hdmi_inst/true_hdmi_output.packet_picker/SR[0]                                                          |                5 |             12 |         2.40 |
+|  clk_pixel_IBUF_BUFG |                                                                                                         | hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/clk_audio_counter_wrap_i_1_n_0 |                5 |             17 |         3.40 |
+|  clk_pixel_IBUF_BUFG | hdmi_inst/true_hdmi_output.packet_picker/audio_clock_regeneration_packet/clk_audio_counter_wrap_i_1_n_0 |                                                                                                         |                6 |             18 |         3.00 |
+|  clk_pixel_IBUF_BUFG | hdmi_inst/tmds_gen[2].tmds_channel/E[0]                                                                 |                                                                                                         |               11 |             20 |         1.82 |
+|  clk_pixel_IBUF_BUFG | hdmi_inst/true_hdmi_output.packet_assembler/parity[0][7]_i_1_n_0                                        | hdmi_inst/true_hdmi_output.packet_assembler/parity[4][7]_i_1_n_0                                        |                9 |             32 |         3.56 |
+|  clk_pixel_IBUF_BUFG |                                                                                                         |                                                                                                         |               19 |             42 |         2.21 |
+|  clk_pixel_IBUF_BUFG |                                                                                                         | hdmi_inst/true_hdmi_output.packet_picker/SR[0]                                                          |               26 |             56 |         2.15 |
++----------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------------+----------------+--------------+
+
+

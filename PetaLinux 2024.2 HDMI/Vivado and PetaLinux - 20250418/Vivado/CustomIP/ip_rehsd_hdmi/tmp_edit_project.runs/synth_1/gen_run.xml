@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-3" LaunchTime="1744420195">
+  <File Type="VDS-TIMINGSUMMARY" Name="hdmi_wrapper_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="hdmi_wrapper.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="hdmi_wrapper_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="hdmi_wrapper_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="hdmi_wrapper_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="hdmi_wrapper.vds"/>
+  <File Type="REPORTS-TCL" Name="hdmi_wrapper_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="hdmi_wrapper_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="hdmi_wrapper.tcl"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/src/audio_clock_regeneration_packet.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/audio_info_frame.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/audio_sample_packet.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/auxiliary_video_information_info_frame.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/hdmi.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/packet_assembler.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/packet_picker.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/serializer.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/source_product_description_info_frame.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/tmds_channel.sv">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/src/hdmi_wrapper.v">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/component.xml">
+      <FileInfo SFType="IPXACT"/>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="hdmi_wrapper"/>
+      <Option Name="TopRTLFile" Val="$PPRDIR/src/hdmi_wrapper.v"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/src/primary.xdc">
+      <FileInfo>
+        <Attr Name="Library" Val=""/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

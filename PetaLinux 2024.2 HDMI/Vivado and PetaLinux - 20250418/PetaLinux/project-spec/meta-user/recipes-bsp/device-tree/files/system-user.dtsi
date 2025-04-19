@@ -1,0 +1,428 @@
+/include/ "system-conf.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+/ {
+	model = "rehsd Zynq-7000 Board";
+	compatible = "rehsd,zynq-7000", "xlnx,zynq-7000";
+	
+	chosen {
+		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio cma=256M video=HDMI-A-1:1280x720M-32@60 video=HDMI-A-2:1280x720M-32@60 video=VGA-1:1280x720M-32@60 fbcon=map:0";
+		
+		//cma=256M@0x30000000 (currently configured in petalinux-config; bootargs should override)
+		//video=HDMI-A-1:1280x720M-32@60 video=HDMI-A-2:1280x720M-32@60 video=VGA-1:640x480M-32@60 fbcon=map:0
+
+		reserved-memory {
+			#address-cells = <1>;
+			#size-cells = <1>;
+			ranges;
+
+			framebuffer0: framebuffer0@20000000 {
+				reg = <0x20000000 0x00800000>; // 8 MB for framebuffer
+				no-map;
+			};
+			
+			framebuffer1: framebuffer1@20800000 {
+				reg = <0x20800000 0x00800000>; // 8 MB for framebuffer
+				no-map;
+			};
+
+			framebuffer2: framebuffer2@21000000 {
+				reg = <0x21000000 0x00800000>; // 8 MB for framebuffer
+				no-map;
+			};
+		};
+
+	};
+	
+	usb_phy0: usb_phy@0 {
+		#phy-cells = <0>;
+		compatible = "ulpi-phy";
+		reg = <0xe0002000 0x1000>;
+		view-port = <0x0170>;
+		reset-gpios = <&gpio0 46 1>;
+		drv-vbus;
+	};
+
+};
+
+&amba_pl {
+
+	rehsd_hdmi_1 {
+		compatible = "rehsd,hdmi";
+		clocks = <&misc_clk_1>;
+		clk = "misc_clk_1";
+		clock-names = "clk";
+		status = "okay";
+		rehsd,edid-i2c = <&i2c0>;
+		port@0 { 
+			hdmi_ep0: endpoint { 
+				remote-endpoint = <&pl_disp0_ep>; 
+			}; 
+		}; 
+	};
+
+	xlnx_pl_disp0 {
+		compatible = "xlnx,pl-disp";
+		device-id = <0xaa01>;
+		dmas = <&v_frmbuf_rd_0 0>; 	
+		dma-names = "dma0"; 
+		xlnx,vformat = "XR24";		//XR24
+		xlnx,bridge = <&v_tc_0>; 
+		status = "okay";
+		port@0 { 
+			pl_disp0_ep: endpoint { 
+				remote-endpoint = <&hdmi_ep0>; 
+			}; 
+		};
+	};
+
+	rehsd_hdmi_2 {
+		compatible = "rehsd,hdmi";
+		clocks = <&misc_clk_1>;
+		clk = "misc_clk_1";
+		clock-names = "clk";
+		status = "okay";
+		//rehsd,edid-i2c = <&i2c0>;
+		port@1 { 
+			hdmi_ep1: endpoint { 
+				remote-endpoint = <&pl_disp1_ep>; 
+			}; 
+		}; 
+	};
+
+	xlnx_pl_disp1 {
+		compatible = "xlnx,pl-disp";
+		device-id = <0xaa02>;
+		dmas = <&v_frmbuf_rd_1 0>; 	
+		dma-names = "dma0"; 
+		xlnx,vformat = "XR24";		//XR24
+		xlnx,bridge = <&v_tc_1>; 
+		status = "okay";
+		port@1 { 
+			pl_disp1_ep: endpoint { 
+				remote-endpoint = <&hdmi_ep1>; 
+			}; 
+		};
+	};
+
+	VGA_clock: vga_clock@0 {
+		#clock-cells = <0>;
+		compatible = "fixed-clock";
+		clock-frequency = <25175000>;
+		clock-output-names = "VGA_clock";
+	};
+
+	rehsd_VGA_0 {
+		compatible = "rehsd,hdmi";
+		clocks = <&VGA_clock>;
+		clk = "VGA_clock";
+		clock-names = "clk";
+		status = "okay";
+		//rehsd,edid-i2c = <&i2c0>;
+		port@2 { 
+			vga_ep0: endpoint { 
+				remote-endpoint = <&pl_disp2_ep>; 
+			}; 
+		}; 
+	};
+
+	xlnx_pl_disp2 {
+		compatible = "xlnx,pl-disp";
+		device-id = <0xaa03>;
+		dmas = <&v_frmbuf_rd_2 0>; 	
+		dma-names = "dma0"; 
+		xlnx,vformat = "XR24";		//XR24
+		xlnx,bridge = <&v_tc_2>; 
+		status = "okay";
+		port@2 { 
+			pl_disp2_ep: endpoint { 
+				remote-endpoint = <&vga_ep0>; 
+			}; 
+		};
+	};	
+
+	axi_iic_0: i2c@81600000 {
+		interrupts = < 0 36 4 >;
+		xlnx,iic-freq-khz = <100>;
+		compatible = "xlnx,axi-iic-2.1" , "xlnx,xps-iic-2.00.a";
+		xlnx,scl-inertial-delay = <0>;
+		interrupt-parent = <&intc>;
+		xlnx,rable = <0>;
+		xlnx,ip-name = "axi_iic";
+		xlnx,disable-setup-violation-check = <0>;
+		reg = <0x81600000 0x10000>;
+		clocks = <&misc_clk_1>;
+		xlnx,gpo-width = <1>;
+		xlnx,edk-iptype = "PERIPHERAL";
+		xlnx,static-timing-reg-width = <0>;
+		xlnx,sda-level = <1>;
+		status = "okay";
+		clock-names = "s_axi_aclk";
+		xlnx,ten-bit-adr = <0>;
+		xlnx,default-value = <0x0>;
+		interrupt-names = "iic2intc_irpt";
+		xlnx,iic-board-interface = "Custom";
+		xlnx,timing-reg-width = <32>;
+		xlnx,iic-freq = <100000>;
+		xlnx,smbus-pmbus-host = <0>;
+		xlnx,name = "axi_iic_0";
+		xlnx,axi-aclk-freq-mhz = <48>;
+		xlnx,sda-inertial-delay = <0>;
+		wm8960: wm8960@1a {
+			#sound-dai-cells = <0>;   // only single DAI
+			compatible = "wlf,wm8960";
+			clock-names ="mclk";
+			clocks =<&misc_clk_0>;
+			assigned-clocks = <&misc_clk_0>;
+			assigned-clock-rates = <24000000>;
+			reg = <0x1a>;		//wm8960 datasheet lists 0x34. the reg value is shifted left by one. 0x1A << 1 = 0x34
+		};
+	};	
+	audio_formatter_0: audio_formatter@83c00000 {
+		audio-codec = <&wm8960>;
+		#sound-dai-cells = <0>;
+		status = "okay";
+	}; 
+	i2s_receiver_0: i2s_receiver@83c10000 {
+		audio-codec = <&wm8960>;
+		#sound-dai-cells = <0>;
+	};
+	i2s_transmitter_0: i2s_transmitter@83c20000 {
+		audio-codec = <&wm8960>;
+		#sound-dai-cells = <0>;
+	};
+};
+
+
+
+&axi_gpio_hdmi {
+	compatible = "generic-uio";	
+};
+
+
+&axi_gpio_0 {
+		#gpio-cells = <2>;
+		clock-names = "s_axi_aclk";
+		clocks = <&misc_clk_1>;
+		compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
+		gpio-controller ;
+		reg = <0x41210000 0x10000>;
+		xlnx,all-inputs = <0x0>;
+		xlnx,all-inputs-2 = <0x0>;
+		xlnx,all-outputs = <0x1>;
+		xlnx,all-outputs-2 = <0x0>;
+		xlnx,dout-default = <0x00000000>;
+		xlnx,dout-default-2 = <0x00000000>;
+		xlnx,gpio-width = <0x1>;
+		xlnx,gpio2-width = <0x20>;
+		xlnx,interrupt-present = <0x0>;
+		xlnx,is-dual = <0x0>;
+		xlnx,tri-default = <0xFFFFFFFF>;
+		xlnx,tri-default-2 = <0xFFFFFFFF>;
+};
+
+&axi_gpio_1 {
+		#gpio-cells = <2>;
+		clock-names = "s_axi_aclk";
+		clocks = <&misc_clk_1>;
+		compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
+		gpio-controller ;
+		reg = <0x40000000 0x10000>;
+		xlnx,all-inputs = <0x0>;
+		xlnx,all-inputs-2 = <0x0>;
+		xlnx,all-outputs = <0x1>;
+		xlnx,all-outputs-2 = <0x0>;
+		xlnx,dout-default = <0x00000000>;
+		xlnx,dout-default-2 = <0x00000000>;
+		xlnx,gpio-width = <0x1>;
+		xlnx,gpio2-width = <0x20>;
+		xlnx,interrupt-present = <0x0>;
+		xlnx,is-dual = <0x0>;
+		xlnx,tri-default = <0xFFFFFFFF>;
+		xlnx,tri-default-2 = <0xFFFFFFFF>;
+};
+
+&axi_gpio_2 {
+		#gpio-cells = <2>;
+		clock-names = "s_axi_aclk";
+		clocks = <&misc_clk_1>;
+		compatible = "xlnx,axi-gpio-2.0", "xlnx,xps-gpio-1.00.a";
+		gpio-controller ;
+		reg = <0x40030000 0x10000>;
+		xlnx,all-inputs = <0x0>;
+		xlnx,all-inputs-2 = <0x0>;
+		xlnx,all-outputs = <0x1>;
+		xlnx,all-outputs-2 = <0x0>;
+		xlnx,dout-default = <0x00000000>;
+		xlnx,dout-default-2 = <0x00000000>;
+		xlnx,gpio-width = <0x1>;
+		xlnx,gpio2-width = <0x20>;
+		xlnx,interrupt-present = <0x0>;
+		xlnx,is-dual = <0x0>;
+		xlnx,tri-default = <0xFFFFFFFF>;
+		xlnx,tri-default-2 = <0xFFFFFFFF>;
+};
+
+&v_frmbuf_rd_0 {
+	#dma-cells = <1>;
+	memory-region = <&framebuffer0>;
+	clock-names = "ap_clk";
+	//clocks = <&misc_clk_1>;
+	clocks = <&clkc 15>;
+	compatible = "xlnx,v-frmbuf-rd-3.0", "xlnx,axi-frmbuf-rd-v2.2";
+	reg = <0x43c00000 0x10000>;      // Base address and size
+	reset-gpios = <&axi_gpio_0 0 1>;
+	gpio-names = "reset";		//"reset"
+	interrupt-names = "interrupt";
+	interrupt-parent = <&intc>;
+	interrupts = <0 30 4>;          // Interrupts configuration
+	xlnx,dma-align = <8>;
+	xlnx,dma-addr-width = <32>;     // Width of the DMA address
+	xlnx,max-height = <720>;        // Maximum vertical resolution
+	xlnx,max-width = <1280>;        // Maximum horizontal resolution
+	xlnx,pixels-per-clock = <1>;    // Pixels per clock cycle
+	//xlnx,vid-formats = "rgb888", "xbgr8888", "xrgb8888", "bgr888", "abgr8888", "uyvy", "y8", "vuy888", "xvuy8888", "yuyv", "nv12", "nv16", "y_u_v8";
+	status = "okay";                // Enable the node
+};
+
+&v_frmbuf_rd_1 {
+	#dma-cells = <1>;
+	memory-region = <&framebuffer1>;
+	clock-names = "ap_clk";
+	//clocks = <&misc_clk_1>;
+	clocks = <&clkc 15>;
+	compatible = "xlnx,v-frmbuf-rd-3.0", "xlnx,axi-frmbuf-rd-v2.2";
+	reg = <0x40010000 0x10000>;      // Base address and size
+	reset-gpios = <&axi_gpio_1 0 1>;
+	gpio-names = "reset";		//"reset"
+	interrupt-names = "interrupt";
+	interrupt-parent = <&intc>;
+	interrupts = <0 56 4>;          // Interrupts configuration
+	xlnx,dma-align = <8>;
+	xlnx,dma-addr-width = <32>;     // Width of the DMA address
+	xlnx,max-height = <720>;        // Maximum vertical resolution
+	xlnx,max-width = <1280>;        // Maximum horizontal resolution
+	xlnx,pixels-per-clock = <1>;    // Pixels per clock cycle
+	//xlnx,vid-formats = "rgb888", "xbgr8888", "xrgb8888", "bgr888", "abgr8888", "uyvy", "y8", "vuy888", "xvuy8888", "yuyv", "nv12", "nv16", "y_u_v8";
+	status = "okay";                // Enable the node
+};
+
+&v_frmbuf_rd_2 {
+	#dma-cells = <1>;
+	memory-region = <&framebuffer2>;
+	clock-names = "ap_clk";
+	//clocks = <&misc_clk_1>;
+	clocks = <&VGA_clock>;
+	compatible = "xlnx,v-frmbuf-rd-3.0", "xlnx,axi-frmbuf-rd-v2.2";
+	reg = <0x40040000 0x10000>;      // Base address and size
+	reset-gpios = <&axi_gpio_2 0 1>;
+	gpio-names = "reset";		//"reset"
+	interrupt-names = "interrupt";
+	interrupt-parent = <&intc>;
+	interrupts = <0 57 4>;          // Interrupts configuration
+	xlnx,dma-align = <8>;
+	xlnx,dma-addr-width = <32>;     // Width of the DMA address
+	xlnx,max-height = <720>;        // Maximum vertical resolution
+	xlnx,max-width = <1280>;        // Maximum horizontal resolution
+	xlnx,pixels-per-clock = <1>;    // Pixels per clock cycle
+	//xlnx,vid-formats = "rgb888", "xbgr8888", "xrgb8888", "bgr888", "abgr8888", "uyvy", "y8", "vuy888", "xvuy8888", "yuyv", "nv12", "nv16", "y_u_v8";
+	status = "okay";                // Enable the node
+};
+
+&v_tc_0 {
+	compatible = "xlnx,v-tc-6.2" , "xlnx,v-tc-6.1" , "xlnx,bridge-v-tc-6.1";
+	xlnx,pixels-per-clock = <1>; 
+	reg = <0x43c10000 0x10000>;
+	status = "okay";
+};
+
+&v_tc_1 {
+	compatible = "xlnx,v-tc-6.2" , "xlnx,v-tc-6.1" , "xlnx,bridge-v-tc-6.1";
+	xlnx,pixels-per-clock = <1>; 
+	reg = <0x40020000 0x10000>;
+	status = "okay";
+};
+
+&v_tc_2 {
+	compatible = "xlnx,v-tc-6.2" , "xlnx,v-tc-6.1" , "xlnx,bridge-v-tc-6.1";
+	xlnx,pixels-per-clock = <1>; 
+	reg = <0x40050000 0x10000>;
+	status = "okay";
+};
+
+&gem0 {
+        phy-handle = <&ethernet_phy>;
+        ethernet_phy: ethernet-phy@0 {
+                device_type = "ethernet-phy";
+                reg = <0>;
+                /* dt-bindings/phy/realtek.h
+                   #define REALTEK_LED_LINK10              BIT(0)
+                   #define REALTEK_LED_LINK100             BIT(1)
+                   #define REALTEK_LED_LINK1000            BIT(3)
+                   #define REALTEK_LED_ACT                 BIT(4)
+                   #define REALTEK_LED_DEFAULT             BIT(7)
+                   LED0=10+A, LED1=100+A, LED2=1000+A */
+                realtek,leds-config = <0x11 0x12 0x18>;
+        };
+};
+
+&usb0 {
+   	status = "okay";
+   	dr_mode = "host";
+   	usb-phy = <&usb_phy0>;
+
+	/*
+	usb2vga {
+		compatible = "sis,sisfb";	// sisusb (x), sisfb (x), sisusbvga, sis ?
+		vendor_id = <0x0711>;
+		product_id = <0x0900>;
+		status = "okay"; 
+		framebuffer {
+			label = "fb1"; 
+			compatible = "linux,fb"; 
+			linux,fb_base = <0x0>; 
+		};
+	};
+	*/
+};
+
+&i2c0 {
+    	clock-frequency = <100000>;
+    	status = "okay";
+};
+
+&i2c1 {
+	status = "okay";
+	ds3231: rtc@68 {
+		compatible = "maxim,ds3231";
+		reg = <0x68>;
+	};
+};
+
+&spi0 {
+	is-decoded-cs = <0>;
+	num-cs = <3>;
+	bus-num = <0>;
+	status = "okay";
+	spidev@0x00 {
+		//compatible = "spidev";
+		//see https://www.hackster.io/whitney-knitter/spidev-tutorial-for-zynq-7000-fpga-devices-b5e399
+		//see https://stackoverflow.com/questions/53634892/linux-spidev-why-it-shouldnt-be-directly-in-devicetree
+		compatible = "rohm,dh2228fv";
+		spi-max-frequency = <1000000>;    //max of 25 Mhz
+		reg = <0>;
+		
+		//SPI mode
+		spi-cpol = <0>;
+		spi-cpha = <0>;
+	};
+	spidev@0x01 {
+		compatible = "spidev";
+		spi-max-frequency = <1000000>;
+		reg = <1>;
+	};
+	spidev@0x02 {
+		compatible = "spidev";
+		spi-max-frequency = <1000000>;
+		reg = <2>;
+	};
+};

@@ -1,0 +1,95 @@
+/include/ "system-conf.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+/* #include </home/rich/petalinux20242/rehsdZynq/xilinx-vip.h> */   /*this doesn't work!?*/
+
+/ {
+	model = "rehsd Zynq-7000 Board";
+	compatible = "rehsd,zynq-7000", "xlnx,zynq-7000";
+	
+	chosen {
+		bootargs = "console=ttyPS0,115200 earlyprintk root=/dev/mmcblk0p2 rw rootwait uio_pdrv_genirq.of_id=generic-uio video=sisusbvga";
+	};
+	
+	usb_phy0: usb_phy@0 {
+		compatible = "ulpi-phy";
+		#phy-cells = <0>;
+		reg = <0xe0002000 0x1000>;
+		view-port = <0x0170>;
+		reset-gpios = <&gpio0 46 1>;
+		drv-vbus;
+	};
+
+};
+&gem0 {
+        phy-handle = <&ethernet_phy>;
+        ethernet_phy: ethernet-phy@0 {
+                device_type = "ethernet-phy";
+                reg = <0>;
+                /* dt-bindings/phy/realtek.h */
+                /* #define REALTEK_LED_LINK10              BIT(0)
+                   #define REALTEK_LED_LINK100             BIT(1)
+                   #define REALTEK_LED_LINK1000            BIT(3)
+                   #define REALTEK_LED_ACT                 BIT(4)
+                   #define REALTEK_LED_DEFAULT             BIT(7)
+                */
+                /* LED0=10+A, LED1=100+A, LED2=1000+A */
+                realtek,leds-config = <0x11 0x12 0x18>;
+        };
+};
+&usb0{
+   status = "okay";
+   dr_mode = "host";
+   usb-phy = <&usb_phy0>;
+};
+&i2c0 {
+    clock-frequency = <100000>;
+    status = "okay";
+};
+&amba_pl {
+	digilent_hdmi {
+		compatible = "digilent,hdmi";
+		
+		clocks = <&axi_dynclk_0>;
+		clock-names = "clk";
+				
+		digilent,edid-i2c = <&i2c0>;
+		digilent,fmax = <150000>;
+		
+		port@0 { 
+			hdmi_ep: endpoint { 
+				remote-endpoint = <&pl_disp_ep>; 
+			}; 
+		}; 
+	};
+	xlnx_pl_disp {
+		compatible = "xlnx,pl-disp";
+		dmas = <&axi_vdma_0 0>; 	
+		dma-names = "dma0"; 
+		xlnx,vformat = "RG24";
+		xlnx,bridge = <&v_tc_0>; 
+		port@0 { 
+			pl_disp_ep: endpoint { 
+				remote-endpoint = <&hdmi_ep>; 
+			}; 
+		};
+	};
+};
+&axi_vdma_0 {
+	dma-ranges = <0x00000000 0x00000000 0x40000000>;
+};
+&axi_dynclk_0 {
+	compatible = "dglnt,axi-dynclk";
+	#clock-cells = <0>;
+	clocks = <&clkc 15>;
+};
+&v_tc_0 {
+	compatible = "xlnx,bridge-v-tc-6.1";
+	xlnx,pixels-per-clock = <1>; 
+	
+	/* clock-names = "s_axi_aclk", "clk"; */
+	/* clocks = <&clkc 15>, <&axi_dynclk_0>; */ 
+};
+&axi_gpio_hdmi {
+	compatible = "generic-uio";	
+};
+
